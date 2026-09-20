@@ -1,6 +1,6 @@
 # rsschool-landing-page
 
-Final project — Landing Page (RS School).
+Landing Page (RS School).
 
 Тема: салон афроплетения ZIZITOP (Минск).
 
