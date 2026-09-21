@@ -3,6 +3,9 @@
    ========================================================================== */
 
 /* --- Категории (табы) --- */
+.section--catalog {
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
 
 .catalog__categories {
   display: flex;
@@ -40,9 +43,9 @@
   white-space: nowrap;
   cursor: pointer;
   transition: color var(--dur) var(--ease),
-              background-color var(--dur) var(--ease),
-              border-color var(--dur) var(--ease),
-              box-shadow var(--dur) var(--ease);
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
 }
 
 .catalog__category:hover,
@@ -104,7 +107,7 @@
   list-style: none;
 }
 
-.card > article {
+.card>article {
   display: grid;
   grid-template-rows: auto 1fr;
   height: 100%;
@@ -114,12 +117,12 @@
   overflow: hidden;
   cursor: pointer;
   transition: border-color var(--dur) var(--ease),
-              transform var(--dur) var(--ease),
-              box-shadow var(--dur) var(--ease);
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
 }
 
-.card > article:hover,
-.card > article:focus-visible {
+.card>article:hover,
+.card>article:focus-visible {
   transform: translateY(-4px);
   border-color: var(--c-accent);
   box-shadow: var(--shadow-md);
@@ -139,7 +142,7 @@
   transition: transform var(--dur-slow) var(--ease);
 }
 
-.card > article:hover .card__image {
+.card>article:hover .card__image {
   transform: scale(1.03);
 }
 
@@ -175,7 +178,7 @@
   transition: border-color var(--dur) var(--ease);
 }
 
-.card__meta > div {
+.card__meta>div {
   display: grid;
   gap: 0.125rem;
 }
