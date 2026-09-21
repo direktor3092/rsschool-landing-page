@@ -87,6 +87,7 @@
   align-items: center;
   gap: var(--sp-md);
   margin: 0;
+  flex-wrap: nowrap; 
 }
 
 .nav__link {
@@ -97,6 +98,7 @@
   font-weight: var(--fw-medium);
   color: var(--c-text);
   transition: color var(--dur) var(--ease);
+  white-space: nowrap; 
 }
 
 .nav__link::after {
@@ -356,4 +358,26 @@
 .footer__rss svg {
   width: 1.5rem;
   height: 1.5rem;
+}
+/* Компактная навигация в диапазоне, где она уже видна, но места мало */
+@media (min-width: 48em) and (max-width: 64em) {   /* 768px – 1024px */
+  .header__inner {
+    gap: var(--sp-sm);
+  }
+
+  .nav__list {
+    gap: var(--sp-sm);
+  }
+
+  .nav__link {
+    font-size: var(--fs-xs);
+  }
+
+  .logo {
+    font-size: var(--fs-sm);
+  }
+
+  .header__actions {
+    gap: var(--sp-3xs);
+  }
 }
