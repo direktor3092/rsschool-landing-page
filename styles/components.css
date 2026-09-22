@@ -76,7 +76,7 @@
   display: none;
 }
 
-@media (min-width: 48em) {   /* ≥768px */
+@media (min-width: 769px) {   /* ≥768px */
   .nav {
     display: block;
   }
@@ -168,7 +168,7 @@
   display: inline-grid;
 }
 
-@media (min-width: 48em) {   /* ≥768px */
+@media (min-width: 769px) {   /* ≥768px */
   .burger {
     display: none;
   }
