@@ -1,0 +1,213 @@
+/* ==========================================================================
+   Catalog page
+   ========================================================================== */
+
+/* --- Категории (табы) --- */
+.section--catalog {
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.catalog__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2xs);
+  padding: var(--sp-2xs);
+  background-color: var(--c-surface-2);
+  border-radius: var(--radius-pill);
+  margin-bottom: var(--sp-xl);
+  width: fit-content;
+  max-width: 100%;
+  transition: background-color var(--dur) var(--ease);
+}
+
+@media (max-width: 30em) {
+  .catalog__categories {
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+}
+
+.catalog__category {
+  flex: 1 1 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625em 1.25em;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text-muted);
+  background-color: transparent;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.catalog__category:hover,
+.catalog__category:focus-visible {
+  color: var(--c-text);
+}
+
+.catalog__category.is-active {
+  background-color: var(--c-surface);
+  color: var(--c-text);
+  border-color: var(--c-border);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 30em) {
+  .catalog__category {
+    border-radius: var(--radius-sm);
+  }
+}
+
+/* --- Панели --- */
+
+.catalog__panel {
+  display: grid;
+  gap: var(--sp-xl);
+}
+
+.catalog__panel[hidden] {
+  display: none;
+}
+
+/* --- Сетка карточек --- */
+
+.catalog__grid {
+  display: grid;
+  gap: var(--sp-lg);
+  grid-template-columns: 1fr;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 30em) {
+  .catalog__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .catalog__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-md);
+  }
+}
+
+/* --- Карточка --- */
+
+.card {
+  list-style: none;
+}
+
+.card>article {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.card>article:hover,
+.card>article:focus-visible {
+  transform: translateY(-4px);
+  border-color: var(--c-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.card__media {
+  display: block;
+  background-color: var(--c-surface-2);
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.card>article:hover .card__image {
+  transform: scale(1.03);
+}
+
+.card__body {
+  display: grid;
+  gap: var(--sp-xs);
+  padding: var(--sp-md);
+  align-content: start;
+}
+
+.card__title {
+  font-family: var(--font-body);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  line-height: var(--lh-snug);
+  color: var(--c-text);
+}
+
+.card__text {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: var(--lh-snug);
+}
+
+.card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-md);
+  margin-top: var(--sp-2xs);
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--c-border);
+  transition: border-color var(--dur) var(--ease);
+}
+
+.card__meta>div {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.card__meta dt {
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card__meta dd {
+  margin: 0;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--c-text);
+}
+
+/* --- Кнопка «Показать ещё» --- */
+
+.catalog__more {
+  display: flex;
+  justify-content: center;
+}
+
+.catalog__more-btn {
+  min-width: 14rem;
+}
+
+.catalog__more-btn[hidden] {
+  display: none;
+}

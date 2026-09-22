@@ -1,0 +1,763 @@
+/* ==========================================================================
+   Home page — sections
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+    padding-block: clamp(2rem, 5vw, 4rem) var(--section-py);
+}
+
+.hero__inner {
+    display: grid;
+    gap: var(--sp-xl);
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+@media (min-width: 48em) {
+
+    /* ≥768px */
+    .hero__inner {
+        grid-template-columns: 1.1fr 1fr;
+        gap: var(--sp-2xl);
+    }
+}
+
+@media (min-width: 64em) {
+
+    /* ≥1024px */
+    .hero__inner {
+        grid-template-columns: 1.05fr 1fr;
+    }
+}
+
+.hero__content {
+    display: grid;
+    gap: var(--sp-md);
+    align-content: start;
+}
+
+/* Eyebrow с розовой точкой */
+
+.hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-2xs);
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--c-text-muted);
+}
+
+.hero__dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--c-accent);
+}
+
+/* Заголовок */
+
+.hero__title {
+    font-size: var(--fs-2xl);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+}
+
+.hero__title-accent {
+    display: inline-block;
+    color: var(--c-accent);
+}
+
+/* Лид */
+
+.hero__lead {
+    max-width: 34rem;
+    font-size: var(--fs-md);
+    color: var(--c-text-muted);
+    line-height: var(--lh-snug);
+}
+
+/* Кнопки */
+
+.hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-sm);
+    margin-top: var(--sp-2xs);
+}
+
+/* Статистика */
+
+.hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--sp-md);
+    margin-top: var(--sp-lg);
+    padding-top: var(--sp-lg);
+    border-top: 1px solid var(--c-border);
+    transition: border-color var(--dur) var(--ease);
+}
+
+.hero__stat-value {
+    font-family: var(--font-display);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--c-text);
+    font-variant-numeric: tabular-nums;
+}
+
+.hero__stat-label {
+    margin: 0;
+    margin-top: var(--sp-2xs);
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
+    line-height: var(--lh-snug);
+}
+
+/* Медиа */
+
+.hero__media {
+    position: relative;
+}
+
+.hero__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* Переключение фото по теме */
+
+.hero__picture--dark {
+    display: none;
+}
+
+[data-theme="dark"] .hero__picture--light {
+    display: none;
+}
+
+[data-theme="dark"] .hero__picture--dark {
+    display: block;
+}
+
+/* Декоративное розовое пятно за фото — на десктопе */
+
+@media (min-width: 48em) {
+    .hero__media::before {
+        content: "";
+        position: absolute;
+        inset: 1.5rem -1.5rem -1.5rem 1.5rem;
+        border-radius: var(--radius-lg);
+        background-color: var(--c-accent);
+        opacity: 0.12;
+        z-index: -1;
+        transition: background-color var(--dur) var(--ease);
+    }
+}
+
+/* На узких экранах фото идёт первым? Нет — текст. Но проверь читаемость */
+
+@media (max-width: 47.99em) {
+    .hero__inner {
+        gap: var(--sp-lg);
+    }
+
+    .hero__media {
+        order: -1;
+        /* фото сверху на мобильном — быстрее цепляет взгляд */
+    }
+
+    .hero__stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--sp-sm);
+    }
+}
+
+/* --------------------------------------------------------------------------
+   2. Slider «Мои работы»
+   -------------------------------------------------------------------------- */
+
+.slider {
+    position: relative;
+}
+
+.slider__viewport {
+    overflow: hidden;
+    /* прячем вылезающие слайды */
+    border-radius: var(--radius-lg);
+}
+
+.slider__track {
+    display: flex;
+    gap: var(--sp-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: transform var(--dur-slow) var(--ease);
+    will-change: transform;
+}
+
+/* На десктопе — 3 слайда в ряд, на планшете — 2, на мобильном — 1 */
+
+.slider__slide {
+    flex: 0 0 100%;
+}
+
+@media (min-width: 40em) {
+
+    /* ≥640px */
+    .slider__slide {
+        flex-basis: calc((100% - var(--sp-md)) / 2);
+    }
+}
+
+@media (min-width: 64em) {
+
+    /* ≥1024px */
+    .slider__slide {
+        flex-basis: calc((100% - var(--sp-md) * 2) / 3);
+    }
+}
+
+.slider__figure {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    transition: border-color var(--dur) var(--ease),
+        transform var(--dur) var(--ease),
+        box-shadow var(--dur) var(--ease);
+}
+
+.slider__figure:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--c-accent);
+}
+
+.slider__image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+.slider__caption {
+    padding: var(--sp-sm) var(--sp-md);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--c-text);
+    border-top: 1px solid var(--c-border);
+    transition: color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease);
+}
+
+/* Управление */
+
+.slider__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-md);
+    margin-top: var(--sp-lg);
+}
+
+.slider__arrow {
+    display: inline-grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    color: var(--c-text);
+    transition: background-color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease),
+        color var(--dur) var(--ease);
+}
+
+.slider__arrow:hover,
+.slider__arrow:focus-visible {
+    background-color: var(--c-accent);
+    border-color: var(--c-accent);
+    color: var(--c-on-accent);
+}
+
+.slider__arrow svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.slider__dots {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-2xs);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.slider__dot {
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--c-border);
+    transition: background-color var(--dur) var(--ease),
+        width var(--dur) var(--ease);
+}
+
+.slider__dot:hover {
+    background-color: var(--c-text-muted);
+}
+
+.slider__dot.is-active {
+    width: 1.5rem;
+    border-radius: 999rem;
+    background-color: var(--c-accent);
+}
+
+/* --------------------------------------------------------------------------
+   3. About
+   -------------------------------------------------------------------------- */
+
+.about {
+    display: grid;
+    gap: var(--sp-xl);
+    grid-template-columns: 1fr;
+    align-items: start;
+}
+
+@media (min-width: 48em) {
+    .about {
+        grid-template-columns: 1fr 1.1fr;
+        gap: var(--sp-2xl);
+        align-items: center;
+    }
+}
+
+.about__media {
+    position: relative;
+}
+
+.about__image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+/* Розовый акцент за фото — зеркально hero */
+@media (min-width: 48em) {
+    .about__media::before {
+        content: "";
+        position: absolute;
+        inset: 1.5rem 1.5rem -1.5rem -1.5rem;
+        border-radius: var(--radius-lg);
+        background-color: var(--c-accent);
+        opacity: 0.12;
+        z-index: -1;
+        transition: background-color var(--dur) var(--ease);
+    }
+}
+
+.about__content {
+    display: grid;
+    gap: var(--sp-md);
+    align-content: start;
+}
+
+.about__accent {
+    color: var(--c-accent);
+}
+
+.about__text {
+    font-size: var(--fs-base);
+    color: var(--c-text-muted);
+    line-height: var(--lh-base);
+    max-width: 38rem;
+}
+
+/* Список преимуществ */
+
+.about__features {
+    display: grid;
+    gap: var(--sp-md);
+    margin-top: var(--sp-sm);
+    list-style: none;
+    padding: 0;
+}
+
+@media (min-width: 40em) {
+    .about__features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.about__feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--sp-sm);
+    align-items: start;
+}
+
+.about__feature-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--c-accent-soft);
+    color: var(--c-accent);
+    flex-shrink: 0;
+    transition: background-color var(--dur) var(--ease),
+        color var(--dur) var(--ease);
+}
+
+.about__feature-icon svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.about__feature-title {
+    font-family: var(--font-body);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0;
+    line-height: var(--lh-snug);
+    color: var(--c-text);
+    margin-bottom: var(--sp-3xs);
+}
+
+.about__feature-text {
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
+    line-height: var(--lh-snug);
+}
+
+/* --------------------------------------------------------------------------
+   4. Process
+   -------------------------------------------------------------------------- */
+
+.process {
+    display: grid;
+    gap: var(--sp-lg);
+    grid-template-columns: 1fr;
+    counter-reset: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 40em) {
+    .process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 64em) {
+    .process {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--sp-md);
+    }
+}
+
+.process__step {
+    position: relative;
+    display: grid;
+    gap: var(--sp-xs);
+    padding: var(--sp-lg);
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    transition: background-color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease),
+        transform var(--dur) var(--ease),
+        box-shadow var(--dur) var(--ease);
+}
+
+.process__step:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--c-accent);
+}
+
+.process__number {
+    font-family: var(--font-display);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-semibold);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--c-accent);
+    margin-bottom: var(--sp-xs);
+    transition: color var(--dur) var(--ease);
+}
+
+.process__title {
+    font-family: var(--font-body);
+    font-size: var(--fs-md);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 0;
+    color: var(--c-text);
+    line-height: var(--lh-snug);
+}
+
+.process__text {
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
+    line-height: var(--lh-snug);
+}
+
+/* --------------------------------------------------------------------------
+   5. Reviews
+   -------------------------------------------------------------------------- */
+
+.reviews {
+    display: grid;
+    gap: var(--sp-lg);
+    grid-template-columns: 1fr;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 48em) {
+    .reviews {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 64em) {
+    .reviews {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.review {
+    display: grid;
+    gap: var(--sp-md);
+    align-content: start;
+    padding: var(--sp-lg);
+    background-color: var(--c-surface);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    transition: background-color var(--dur) var(--ease),
+        border-color var(--dur) var(--ease),
+        transform var(--dur) var(--ease),
+        box-shadow var(--dur) var(--ease);
+}
+
+.review:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-accent);
+    box-shadow: var(--shadow-md);
+}
+
+.review__quote {
+    margin: 0;
+    font-size: var(--fs-sm);
+    color: var(--c-text);
+    line-height: var(--lh-base);
+    position: relative;
+    padding-top: var(--sp-md);
+}
+
+/* Декоративная кавычка */
+
+.review__quote::before {
+    content: "“";
+    position: absolute;
+    top: -0.4rem;
+    left: 0;
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--c-accent);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.review__author {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-sm);
+    padding-top: var(--sp-md);
+    border-top: 1px solid var(--c-border);
+    transition: border-color var(--dur) var(--ease);
+}
+
+.review__avatar {
+    display: inline-grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--c-accent-soft);
+    color: var(--c-accent);
+    font-family: var(--font-display);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    flex-shrink: 0;
+    transition: background-color var(--dur) var(--ease),
+        color var(--dur) var(--ease);
+}
+
+.review__name {
+    display: block;
+    font-style: normal;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--c-text);
+    line-height: 1.2;
+}
+
+.review__meta {
+    margin-top: 0.125rem;
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
+    line-height: 1.3;
+}
+/* --------------------------------------------------------------------------
+   6. CTA / Contacts
+   -------------------------------------------------------------------------- */
+
+.cta {
+  position: relative;
+  display: grid;
+  gap: var(--sp-xl);
+  grid-template-columns: 1fr;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: background-color var(--dur) var(--ease),
+              border-color var(--dur) var(--ease);
+}
+
+@media (min-width: 48em) {
+  .cta {
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--sp-2xl);
+    align-items: center;
+  }
+}
+
+.cta__content {
+  display: grid;
+  gap: var(--sp-md);
+  align-content: start;
+}
+
+.cta__lead {
+  font-size: var(--fs-md);
+  color: var(--c-text-muted);
+  line-height: var(--lh-snug);
+  max-width: 32rem;
+}
+
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-2xs);
+}
+
+/* Контактные строки */
+
+.cta__contacts {
+  display: grid;
+  gap: var(--sp-sm);
+  margin-top: var(--sp-md);
+  padding-top: var(--sp-md);
+  border-top: 1px solid var(--c-border);
+  list-style: none;
+  padding-left: 0;
+  transition: border-color var(--dur) var(--ease);
+}
+
+.cta__contact {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  font-size: var(--fs-sm);
+  color: var(--c-text);
+}
+
+.cta__contact-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: var(--c-accent-soft);
+  color: var(--c-accent);
+  flex-shrink: 0;
+  transition: background-color var(--dur) var(--ease),
+              color var(--dur) var(--ease);
+}
+
+.cta__contact-icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.cta__contact-link {
+  color: var(--c-text);
+  transition: color var(--dur) var(--ease);
+}
+
+.cta__contact-link:hover,
+.cta__contact-link:focus-visible {
+  color: var(--c-accent);
+}
+
+/* Декоративный визуал */
+
+.cta__visual {
+  position: relative;
+  display: none;
+  min-height: 18rem;
+}
+
+@media (min-width: 48em) {
+  .cta__visual {
+    display: block;
+  }
+}
+
+.cta__blob {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 22rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--c-accent) 0%,
+    transparent 65%
+  );
+  opacity: 0.35;
+  filter: blur(2px);
+  transition: background var(--dur) var(--ease);
+}
+
+[data-theme="dark"] .cta__blob {
+  opacity: 0.45;
+}

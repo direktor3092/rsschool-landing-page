@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Design tokens — ZIZITOP
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* --- Палитра: светлая тема --- */
+  --c-bg:            #faf9fa;
+  --c-surface:       #ffffff;
+  --c-surface-2:     #eeecef;
+  --c-text:          #0e0d0f;
+  --c-text-muted:    #6a6a72;
+  --c-border:        #e4e2e6;
+  --c-accent:        #e51e85;
+  --c-accent-hover:  #c11770;
+  --c-accent-soft:   #ffe5f1;
+  --c-on-accent:     #ffffff;
+  --c-focus:         #e51e85;
+  --c-overlay:       rgb(14 13 15 / 0.65);
+
+  /* --- Типографика --- */
+  --font-display: "Unbounded", system-ui, -apple-system, sans-serif;
+  --font-body:    "Manrope", system-ui, -apple-system, sans-serif;
+
+  --fs-xs:   clamp(0.8125rem, 0.78rem + 0.15vw, 0.875rem);
+  --fs-sm:   clamp(0.9375rem, 0.90rem + 0.20vw, 1rem);
+  --fs-base: clamp(1rem,      0.95rem + 0.25vw, 1.125rem);
+  --fs-md:   clamp(1.125rem,  1.05rem + 0.40vw, 1.25rem);
+  --fs-lg:   clamp(1.375rem,  1.15rem + 1.00vw, 1.75rem);
+  --fs-xl:   clamp(1.75rem,   1.35rem + 1.80vw, 2.75rem);
+  --fs-2xl:  clamp(2.25rem,   1.50rem + 3.40vw, 4.25rem);
+
+  --lh-tight: 1.1;
+  --lh-snug:  1.25;
+  --lh-base:  1.55;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+
+  /* --- Отступы --- */
+  --sp-3xs: 0.25rem;
+  --sp-2xs: 0.5rem;
+  --sp-xs:  0.75rem;
+  --sp-sm:  1rem;
+  --sp-md:  1.5rem;
+  --sp-lg:  2rem;
+  --sp-xl:  3rem;
+  --sp-2xl: 4rem;
+
+  /* --- Ритм и контейнер --- */
+  --section-py:    clamp(3rem, 7vw, 7rem);
+  --container-max: 80rem;
+  --container-pad: clamp(1rem, 4vw, 2.5rem);
+
+  /* --- Радиусы --- */
+  --radius-sm:   0.75rem;
+  --radius-md:   1.25rem;
+  --radius-lg:   2rem;
+  --radius-pill: 999rem;
+
+  /* --- Тени --- */
+  --shadow-sm: 0 1px 2px rgb(14 13 15 / 0.06);
+  --shadow-md: 0 12px 32px -12px rgb(14 13 15 / 0.16);
+
+  /* --- Анимации --- */
+  --ease:      cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast:  150ms;
+  --dur:       220ms;
+  --dur-slow:  400ms;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --c-bg:            #0e0d0f;
+  --c-surface:       #17161a;
+  --c-surface-2:     #1f1e23;
+  --c-text:          #f5f2f4;
+  --c-text-muted:    #a0a0a8;
+  --c-border:        #2a2930;
+  --c-accent:        #ff4da6;
+  --c-accent-hover:  #ff6fb5;
+  --c-accent-soft:   #3a1024;
+  --c-on-accent:     #ffffff;
+  --c-focus:         #ff4da6;
+  --c-overlay:       rgb(0 0 0 / 0.75);
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.5);
+  --shadow-md: 0 12px 32px -12px rgb(0 0 0 / 0.7);
+}
