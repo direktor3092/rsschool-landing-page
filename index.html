@@ -2,655 +2,662 @@
 <html lang="ru" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZIZITOP — афрокосички и дреды в Минске</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/icons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-    <!-- Тема до отрисовки, чтобы не было вспышки -->
-    <script>
-        (() => {
-            const stored = localStorage.getItem('theme');
-            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-            document.documentElement.dataset.theme = stored ?? (prefersDark ? 'dark' : 'light');
-        })();
-    </script>
-    <link rel="preload" href="assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/unbounded-600.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="styles/tokens.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIZITOP — афрокосички и дреды в Минске</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <!-- Тема до отрисовки, чтобы не было вспышки -->
+  <script>
+    (() => {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = stored ?? (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="preload" href="assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/home.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__inner container">
-            <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
-                <span class="logo__mark">ZIZITOP</span>
-                <span class="logo__suffix">.by</span>
-            </a>
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
+        <span class="logo__mark">ZIZITOP</span>
+        <span class="logo__suffix">.by</span>
+      </a>
 
-            <nav class="nav" aria-label="Основная навигация">
-                <ul class="nav__list">
-                    <li><a class="nav__link" href="index.html#works">Работы</a></li>
-                    <li><a class="nav__link" href="index.html#about">О мастере</a></li>
-                    <li><a class="nav__link" href="index.html#process">Как записаться</a></li>
-                    <li><a class="nav__link" href="catalog.html">Каталог</a></li>
-                    <li><a class="nav__link" href="index.html#contacts">Контакты</a></li>
-                </ul>
-            </nav>
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html#works">Работы</a></li>
+          <li><a class="nav__link" href="index.html#about">О мастере</a></li>
+          <li><a class="nav__link" href="index.html#process">Как записаться</a></li>
+          <li><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="nav__link" href="index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
 
-            <div class="header__actions">
-                <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false"
-                    aria-label="Включить тёмную тему">
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        aria-hidden="true">
-                        <circle cx="12" cy="12" r="4" />
-                        <path
-                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        aria-hidden="true">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                    </svg>
-                </button>
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false"
+          aria-label="Включить тёмную тему">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
 
-                <button class="icon-btn burger" type="button" data-burger aria-expanded="false"
-                    aria-controls="mobile-menu" aria-label="Открыть меню">
-                    <span class="burger__box" aria-hidden="true">
-                        <span class="burger__line"></span>
-                        <span class="burger__line"></span>
-                        <span class="burger__line"></span>
-                    </span>
-                </button>
+        <button class="icon-btn burger" type="button" data-burger aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Открыть меню">
+          <span class="burger__box" aria-hidden="true">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </header>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+      <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="index.html#works">Работы</a></li>
+          <li><a class="mobile-menu__link" href="index.html#about">О мастере</a></li>
+          <li><a class="mobile-menu__link" href="index.html#process">Как записаться</a></li>
+          <li><a class="mobile-menu__link" href="catalog.html">Каталог</a></li>
+          <li><a class="mobile-menu__link" href="index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  <main id="main">
+
+    <!-- Секция 1: HERO -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__inner container">
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">
+            <span class="hero__dot" aria-hidden="true"></span>
+            Минск · м. Восток
+          </p>
+
+          <h1 class="hero__title" id="hero-title">
+            Афрокосички, дреды и зизи
+            <span class="hero__title-accent">безопасным плетением</span>
+          </h1>
+
+          <p class="hero__lead">
+            Более 10 лет создаю причёски, которые носятся месяцами и не портят
+            волосы. Работаю с натуральными и афро-волосами, возможен выезд на дом.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#contacts">Записаться</a>
+            <a class="btn btn--ghost" href="#works">Смотреть работы</a>
+          </div>
+
+          <dl class="hero__stats">
+            <div class="hero__stat">
+              <dt class="hero__stat-value">10+</dt>
+              <dd class="hero__stat-label">лет опыта</dd>
             </div>
+            <div class="hero__stat">
+              <dt class="hero__stat-value">2 000+</dt>
+              <dd class="hero__stat-label">довольных клиентов</dd>
+            </div>
+            <div class="hero__stat">
+              <dt class="hero__stat-value">4.9</dt>
+              <dd class="hero__stat-label">средняя оценка</dd>
+            </div>
+          </dl>
         </div>
-    </header>
 
-    <main id="main">
-
-        <!-- Секция 1: HERO -->
-        <section class="hero" id="hero" aria-labelledby="hero-title">
-            <div class="hero__inner container">
-
-                <div class="hero__content">
-                    <p class="hero__eyebrow">
-                        <span class="hero__dot" aria-hidden="true"></span>
-                        Минск · м. Восток
-                    </p>
-
-                    <h1 class="hero__title" id="hero-title">
-                        Афрокосички, дреды и зизи
-                        <span class="hero__title-accent">безопасным плетением</span>
-                    </h1>
-
-                    <p class="hero__lead">
-                        Более 10 лет создаю причёски, которые носятся месяцами и не портят
-                        волосы. Работаю с натуральными и афро-волосами, возможен выезд на дом.
-                    </p>
-
-                    <div class="hero__actions">
-                        <a class="btn btn--primary" href="#contacts">Записаться</a>
-                        <a class="btn btn--ghost" href="#works">Смотреть работы</a>
-                    </div>
-
-                    <dl class="hero__stats">
-                        <div class="hero__stat">
-                            <dt class="hero__stat-value">10+</dt>
-                            <dd class="hero__stat-label">лет опыта</dd>
-                        </div>
-                        <div class="hero__stat">
-                            <dt class="hero__stat-value">2 000+</dt>
-                            <dd class="hero__stat-label">довольных клиентов</dd>
-                        </div>
-                        <div class="hero__stat">
-                            <dt class="hero__stat-value">4.9</dt>
-                            <dd class="hero__stat-label">средняя оценка</dd>
-                        </div>
-                    </dl>
-                </div>
-
-                <div class="hero__media">
-                    <!-- Фото для светлой темы -->
-                    <picture class="hero__picture hero__picture--light">
-                        <source type="image/avif" srcset="assets/images/hero/hero-light-480.avif 480w,
+        <div class="hero__media">
+          <!-- Фото для светлой темы -->
+          <picture class="hero__picture hero__picture--light">
+            <source type="image/avif" srcset="assets/images/hero/hero-light-480.avif 480w,
               assets/images/hero/hero-light-960.avif 960w,
               assets/images/hero/hero-light-1440.avif 1440w" sizes="(max-width: 48em) 100vw, 42vw">
-                        <source type="image/webp" srcset="assets/images/hero/hero-light-480.webp 480w,
+            <source type="image/webp" srcset="assets/images/hero/hero-light-480.webp 480w,
               assets/images/hero/hero-light-960.webp 960w,
               assets/images/hero/hero-light-1440.webp 1440w" sizes="(max-width: 48em) 100vw, 42vw">
-                        <img class="hero__image" src="assets/images/hero/hero-light-960.jpg"
-                            alt="Дреды в серо-белой гамме, авторская работа ZIZITOP" width="960" height="1200"
-                            loading="eager" fetchpriority="high" decoding="async">
-                    </picture>
+            <img class="hero__image" src="assets/images/hero/hero-light-960.jpg"
+              alt="Дреды в серо-белой гамме, авторская работа ZIZITOP" width="960" height="1200" loading="eager"
+              fetchpriority="high" decoding="async">
+          </picture>
 
-                    <!-- Фото для тёмной темы -->
-                    <picture class="hero__picture hero__picture--dark">
-                        <source type="image/avif" srcset="assets/images/hero/hero-dark-480.avif 480w,
+          <!-- Фото для тёмной темы -->
+          <picture class="hero__picture hero__picture--dark">
+            <source type="image/avif" srcset="assets/images/hero/hero-dark-480.avif 480w,
               assets/images/hero/hero-dark-960.avif 960w,
               assets/images/hero/hero-dark-1440.avif 1440w" sizes="(max-width: 48em) 100vw, 42vw">
-                        <source type="image/webp" srcset="assets/images/hero/hero-dark-480.webp 480w,
+            <source type="image/webp" srcset="assets/images/hero/hero-dark-480.webp 480w,
               assets/images/hero/hero-dark-960.webp 960w,
               assets/images/hero/hero-dark-1440.webp 1440w" sizes="(max-width: 48em) 100vw, 42vw">
-                        <img class="hero__image" src="assets/images/hero/hero-dark-960.jpg"
-                            alt="Дреды с зелёным канекалоном, авторская работа ZIZITOP" width="960" height="1200"
-                            loading="lazy" decoding="async">
-                    </picture>
-                </div>
+            <img class="hero__image" src="assets/images/hero/hero-dark-960.jpg"
+              alt="Дреды с зелёным канекалоном, авторская работа ZIZITOP" width="960" height="1200" loading="lazy"
+              decoding="async">
+          </picture>
+        </div>
 
-            </div>
-        </section>
+      </div>
+    </section>
 
-<!-- Секция 2: РАБОТЫ (слайдер) -->
-<section class="section section--muted" id="works" aria-labelledby="works-title">
-  <div class="container">
-    <div class="section__head">
-      <p class="section__eyebrow">Портфолио</p>
-      <h2 class="section__title" id="works-title">Мои работы</h2>
-      <p class="section__lead">
-        Каждая причёска — от 4 до 12 часов работы. Плету безопасно, без натяжения
-        кожи головы и с сохранением родных волос.
-      </p>
-    </div>
+    <!-- Секция 2: РАБОТЫ (слайдер) -->
+    <section class="section section--muted" id="works" aria-labelledby="works-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">Портфолио</p>
+          <h2 class="section__title" id="works-title">Мои работы</h2>
+          <p class="section__lead">
+            Каждая причёска — от 4 до 12 часов работы. Плету безопасно, без натяжения
+            кожи головы и с сохранением родных волос.
+          </p>
+        </div>
 
-    <div class="slider" data-slider role="region" aria-roledescription="карусель" aria-label="Галерея работ">
-      <div class="slider__viewport">
-        <ul class="slider__track" data-slider-track>
-          <li class="slider__slide" data-slide>
-            <figure class="slider__figure">
-              <picture>
-                <source
-                  type="image/avif"
-                  srcset="assets/images/works/work-01-480.avif 480w,
+        <div class="slider" data-slider role="region" aria-roledescription="карусель" aria-label="Галерея работ">
+          <div class="slider__viewport">
+            <ul class="slider__track" data-slider-track>
+              <li class="slider__slide" data-slide>
+                <figure class="slider__figure">
+                  <picture>
+                    <source type="image/avif" srcset="assets/images/works/work-01-480.avif 480w,
                           assets/images/works/work-01-960.avif 960w,
                           assets/images/works/work-01-1440.avif 1440w"
-                  sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <source
-                  type="image/webp"
-                  srcset="assets/images/works/work-01-480.webp 480w,
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <source type="image/webp" srcset="assets/images/works/work-01-480.webp 480w,
                           assets/images/works/work-01-960.webp 960w,
                           assets/images/works/work-01-1440.webp 1440w"
-                  sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <img
-                  class="slider__image"
-                  src="assets/images/works/work-01-960.jpg"
-                  alt="Длинные классические афрокосички пепельного цвета, работа мастера студии ZIZITOP"
-                  width="960" height="1280"
-                  loading="lazy" decoding="async">
-              </picture>
-              <figcaption class="slider__caption">Се косы на брейды</figcaption>
-            </figure>
-          </li>
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <img class="slider__image" src="assets/images/works/work-01-960.jpg"
+                      alt="Длинные классические афрокосички пепельного цвета, работа мастера студии ZIZITOP" width="960"
+                      height="1280" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption class="slider__caption">Се косы на брейды</figcaption>
+                </figure>
+              </li>
 
-          <li class="slider__slide" data-slide>
-            <figure class="slider__figure">
-              <picture>
-                <source type="image/avif" srcset="assets/images/works/work-02-480.avif 480w, assets/images/works/work-02-960.avif 960w, assets/images/works/work-02-1440.avif 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <source type="image/webp" srcset="assets/images/works/work-02-480.webp 480w, assets/images/works/work-02-960.webp 960w, assets/images/works/work-02-1440.webp 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <img class="slider__image" src="assets/images/works/work-02-960.jpg" alt="Мужские афрокосы с канекалоном серого и пепельного оттенка, стильная мужская прическа" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <figcaption class="slider__caption">Афрокосы на андеркат</figcaption>
-            </figure>
-          </li>
+              <li class="slider__slide" data-slide>
+                <figure class="slider__figure">
+                  <picture>
+                    <source type="image/avif"
+                      srcset="assets/images/works/work-02-480.avif 480w, assets/images/works/work-02-960.avif 960w, assets/images/works/work-02-1440.avif 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <source type="image/webp"
+                      srcset="assets/images/works/work-02-480.webp 480w, assets/images/works/work-02-960.webp 960w, assets/images/works/work-02-1440.webp 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <img class="slider__image" src="assets/images/works/work-02-960.jpg"
+                      alt="Мужские афрокосы с канекалоном серого и пепельного оттенка, стильная мужская прическа"
+                      width="960" height="1280" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption class="slider__caption">Афрокосы на андеркат</figcaption>
+                </figure>
+              </li>
 
-          <li class="slider__slide" data-slide>
-            <figure class="slider__figure">
-              <picture>
-                <source type="image/avif" srcset="assets/images/works/work-03-480.avif 480w, assets/images/works/work-03-960.avif 960w, assets/images/works/work-03-1440.avif 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <source type="image/webp" srcset="assets/images/works/work-03-480.webp 480w, assets/images/works/work-03-960.webp 960w, assets/images/works/work-03-1440.webp 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <img class="slider__image" src="assets/images/works/work-03-960.jpg" alt="Безопасные детские афрокудри и брейды светло-русого цвета для девочек" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <figcaption class="slider__caption">Зизи косички</figcaption>
-            </figure>
-          </li>
+              <li class="slider__slide" data-slide>
+                <figure class="slider__figure">
+                  <picture>
+                    <source type="image/avif"
+                      srcset="assets/images/works/work-03-480.avif 480w, assets/images/works/work-03-960.avif 960w, assets/images/works/work-03-1440.avif 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <source type="image/webp"
+                      srcset="assets/images/works/work-03-480.webp 480w, assets/images/works/work-03-960.webp 960w, assets/images/works/work-03-1440.webp 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <img class="slider__image" src="assets/images/works/work-03-960.jpg"
+                      alt="Безопасные детские афрокудри и брейды светло-русого цвета для девочек" width="960"
+                      height="1280" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption class="slider__caption">Зизи косички</figcaption>
+                </figure>
+              </li>
 
-          <li class="slider__slide" data-slide>
-            <figure class="slider__figure">
-              <picture>
-                <source type="image/avif" srcset="assets/images/works/work-04-480.avif 480w, assets/images/works/work-04-960.avif 960w, assets/images/works/work-04-1440.avif 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <source type="image/webp" srcset="assets/images/works/work-04-480.webp 480w, assets/images/works/work-04-960.webp 960w, assets/images/works/work-04-1440.webp 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <img class="slider__image" src="assets/images/works/work-04-960.jpg" alt="Яркие текстурные де-дреды с переходом цвета из красного в желтый омбре" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <figcaption class="slider__caption">Де дреды</figcaption>
-            </figure>
-          </li>
+              <li class="slider__slide" data-slide>
+                <figure class="slider__figure">
+                  <picture>
+                    <source type="image/avif"
+                      srcset="assets/images/works/work-04-480.avif 480w, assets/images/works/work-04-960.avif 960w, assets/images/works/work-04-1440.avif 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <source type="image/webp"
+                      srcset="assets/images/works/work-04-480.webp 480w, assets/images/works/work-04-960.webp 960w, assets/images/works/work-04-1440.webp 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <img class="slider__image" src="assets/images/works/work-04-960.jpg"
+                      alt="Яркие текстурные де-дреды с переходом цвета из красного в желтый омбре" width="960"
+                      height="1280" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption class="slider__caption">Де дреды</figcaption>
+                </figure>
+              </li>
 
-          <li class="slider__slide" data-slide>
-            <figure class="slider__figure">
-              <picture>
-                <source type="image/avif" srcset="assets/images/works/work-05-480.avif 480w, assets/images/works/work-05-960.avif 960w, assets/images/works/work-05-1440.avif 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <source type="image/webp" srcset="assets/images/works/work-05-480.webp 480w, assets/images/works/work-05-960.webp 960w, assets/images/works/work-05-1440.webp 1440w" sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
-                <img class="slider__image" src="assets/images/works/work-05-960.jpg" alt="Классические натуральные дреды русого оттенка на длинные волосы с татуировками" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <figcaption class="slider__caption">Натуральные дреды с удлинением канекалоном</figcaption>
-            </figure>
-          </li>
-        </ul>
+              <li class="slider__slide" data-slide>
+                <figure class="slider__figure">
+                  <picture>
+                    <source type="image/avif"
+                      srcset="assets/images/works/work-05-480.avif 480w, assets/images/works/work-05-960.avif 960w, assets/images/works/work-05-1440.avif 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <source type="image/webp"
+                      srcset="assets/images/works/work-05-480.webp 480w, assets/images/works/work-05-960.webp 960w, assets/images/works/work-05-1440.webp 1440w"
+                      sizes="(max-width: 48em) 90vw, (max-width: 64em) 45vw, 30vw">
+                    <img class="slider__image" src="assets/images/works/work-05-960.jpg"
+                      alt="Классические натуральные дреды русого оттенка на длинные волосы с татуировками" width="960"
+                      height="1280" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption class="slider__caption">Натуральные дреды с удлинением канекалоном</figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+          <div class="slider__controls">
+            <button class="slider__arrow" type="button" data-slider-prev aria-label="Предыдущий слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+
+            <ul class="slider__dots" data-slider-dots aria-label="Навигация по слайдам">
+              <li><button class="slider__dot is-active" type="button" data-slider-dot="0" aria-label="Слайд 1"
+                  aria-current="true"></button></li>
+              <li><button class="slider__dot" type="button" data-slider-dot="1" aria-label="Слайд 2"></button></li>
+              <li><button class="slider__dot" type="button" data-slider-dot="2" aria-label="Слайд 3"></button></li>
+              <li><button class="slider__dot" type="button" data-slider-dot="3" aria-label="Слайд 4"></button></li>
+              <li><button class="slider__dot" type="button" data-slider-dot="4" aria-label="Слайд 5"></button></li>
+            </ul>
+
+            <button class="slider__arrow" type="button" data-slider-next aria-label="Следующий слайд">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="slider__controls">
-        <button
-          class="slider__arrow"
-          type="button"
-          data-slider-prev
-          aria-label="Предыдущий слайд"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M15 18l-6-6 6-6"/>
-          </svg>
-        </button>
+    <!-- Секция 3: О МАСТЕРЕ -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about">
 
-        <ul class="slider__dots" data-slider-dots aria-label="Навигация по слайдам">
-          <li><button class="slider__dot is-active" type="button" data-slider-dot="0" aria-label="Слайд 1" aria-current="true"></button></li>
-          <li><button class="slider__dot" type="button" data-slider-dot="1" aria-label="Слайд 2"></button></li>
-          <li><button class="slider__dot" type="button" data-slider-dot="2" aria-label="Слайд 3"></button></li>
-          <li><button class="slider__dot" type="button" data-slider-dot="3" aria-label="Слайд 4"></button></li>
-          <li><button class="slider__dot" type="button" data-slider-dot="4" aria-label="Слайд 5"></button></li>
-        </ul>
-
-        <button
-          class="slider__arrow"
-          type="button"
-          data-slider-next
-          aria-label="Следующий слайд"
-        >
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Секция 3: О МАСТЕРЕ -->
-<section class="section" id="about" aria-labelledby="about-title">
-  <div class="container">
-    <div class="about">
-
-      <div class="about__media">
-        <picture>
-          <source
-            type="image/avif"
-            srcset="assets/images/about/about-480.avif 480w,
+          <div class="about__media">
+            <picture>
+              <source type="image/avif" srcset="assets/images/about/about-480.avif 480w,
                     assets/images/about/about-960.avif 960w,
-                    assets/images/about/about-1440.avif 1440w"
-            sizes="(max-width: 48em) 100vw, 45vw">
-          <source
-            type="image/webp"
-            srcset="assets/images/about/about-480.webp 480w,
+                    assets/images/about/about-1440.avif 1440w" sizes="(max-width: 48em) 100vw, 45vw">
+              <source type="image/webp" srcset="assets/images/about/about-480.webp 480w,
                     assets/images/about/about-960.webp 960w,
-                    assets/images/about/about-1440.webp 1440w"
-            sizes="(max-width: 48em) 100vw, 45vw">
-          <img
-            class="about__image"
-            src="assets/images/about/about-960.jpg"
-            alt="Мастер ZIZITOP в процессе плетения афрокосичек"
-            width="960" height="1200"
-            loading="lazy" decoding="async">
-        </picture>
+                    assets/images/about/about-1440.webp 1440w" sizes="(max-width: 48em) 100vw, 45vw">
+              <img class="about__image" src="assets/images/about/about-960.jpg"
+                alt="Мастер ZIZITOP в процессе плетения афрокосичек" width="960" height="1200" loading="lazy"
+                decoding="async">
+            </picture>
+          </div>
+
+          <div class="about__content">
+            <p class="section__eyebrow">О мастере</p>
+            <h2 class="section__title" id="about-title">
+              Меня зовут <span class="about__accent">Полина</span>, я плету уже более 10 лет
+            </h2>
+
+            <p class="about__text">
+              Начинала с классических афрокосичек для подруг, а сегодня ко мне
+              приезжают со всей Беларуси. Работаю только с качественным канекалоном
+              и бережными техниками — после снятия причёски ваши волосы остаются
+              здоровыми.
+            </p>
+
+            <p class="about__text">
+              Каждую причёску подбираю индивидуально: по форме лица, типу волос
+              и образу жизни. Если вы не знаете, что хотите, — помогу определиться
+              на консультации.
+            </p>
+
+            <ul class="about__features">
+              <li class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="about__feature-title">Безопасное плетение</h3>
+                  <p class="about__feature-text">Без натяжения кожи и потери родных волос</p>
+                </div>
+              </li>
+
+              <li class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="about__feature-title">Премиум-материалы</h3>
+                  <p class="about__feature-text">Канекалон, который не путается и держит цвет</p>
+                </div>
+              </li>
+
+              <li class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="about__feature-title">Выезд на дом</h3>
+                  <p class="about__feature-text">По Минску и в пределах 30 км от МКАД</p>
+                </div>
+              </li>
+
+              <li class="about__feature">
+                <span class="about__feature-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
+                <div>
+                  <h3 class="about__feature-title">Гарантия на работу</h3>
+                  <p class="about__feature-text">Бесплатная коррекция в течение двух недель</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </div>
+    </section>
 
-      <div class="about__content">
-        <p class="section__eyebrow">О мастере</p>
-        <h2 class="section__title" id="about-title">
-          Меня зовут <span class="about__accent">Полина</span>, я плету уже более 10 лет
-        </h2>
+    <!-- Секция 4: ПРОЦЕСС -->
+    <section class="section section--muted" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">Как записаться</p>
+          <h2 class="section__title" id="process-title">Четыре шага до новых волос</h2>
+          <p class="section__lead">
+            От первого сообщения до готовой причёски — обычно не больше недели.
+          </p>
+        </div>
 
-        <p class="about__text">
-          Начинала с классических афрокосичек для подруг, а сегодня ко мне
-          приезжают со всей Беларуси. Работаю только с качественным канекалоном
-          и бережными техниками — после снятия причёски ваши волосы остаются
-          здоровыми.
-        </p>
-
-        <p class="about__text">
-          Каждую причёску подбираю индивидуально: по форме лица, типу волос
-          и образу жизни. Если вы не знаете, что хотите, — помогу определиться
-          на консультации.
-        </p>
-
-        <ul class="about__features">
-          <li class="about__feature">
-            <span class="about__feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
-            </span>
-            <div>
-              <h3 class="about__feature-title">Безопасное плетение</h3>
-              <p class="about__feature-text">Без натяжения кожи и потери родных волос</p>
-            </div>
+        <ol class="process">
+          <li class="process__step">
+            <span class="process__number" aria-hidden="true">01</span>
+            <h3 class="process__title">Заявка</h3>
+            <p class="process__text">
+              Напишите в Instagram или Telegram. Расскажите, какую причёску хотите
+              и когда удобно прийти.
+            </p>
           </li>
 
-          <li class="about__feature">
-            <span class="about__feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
-            </span>
-            <div>
-              <h3 class="about__feature-title">Премиум-материалы</h3>
-              <p class="about__feature-text">Канекалон, который не путается и держит цвет</p>
-            </div>
+          <li class="process__step">
+            <span class="process__number" aria-hidden="true">02</span>
+            <h3 class="process__title">Консультация</h3>
+            <p class="process__text">
+              Обсудим детали: длину, цвет, тип плетения. Посчитаю точную стоимость
+              и время работы.
+            </p>
           </li>
 
-          <li class="about__feature">
-            <span class="about__feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
-            </span>
-            <div>
-              <h3 class="about__feature-title">Выезд на дом</h3>
-              <p class="about__feature-text">По Минску и в пределах 30 км от МКАД</p>
-            </div>
+          <li class="process__step">
+            <span class="process__number" aria-hidden="true">03</span>
+            <h3 class="process__title">Плетение</h3>
+            <p class="process__text">
+              Приходите в студию или заказывайте выезд на дом. Работа занимает
+              от 4 до 12 часов в зависимости от сложности.
+            </p>
           </li>
 
-          <li class="about__feature">
-            <span class="about__feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 6L9 17l-5-5"/>
-              </svg>
-            </span>
-            <div>
-              <h3 class="about__feature-title">Гарантия на работу</h3>
-              <p class="about__feature-text">Бесплатная коррекция в течение двух недель</p>
-            </div>
+          <li class="process__step">
+            <span class="process__number" aria-hidden="true">04</span>
+            <h3 class="process__title">Уход</h3>
+            <p class="process__text">
+              Даю рекомендации по уходу и бесплатную коррекцию в первые две недели,
+              если что-то нужно поправить.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Секция 5: ОТЗЫВЫ -->
+    <section class="section" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section__head">
+          <p class="section__eyebrow">Отзывы</p>
+          <h2 class="section__title" id="reviews-title">Что говорят клиенты</h2>
+          <p class="section__lead">
+            Больше отзывов — в закреплённых сторис и в Instagram.
+          </p>
+        </div>
+
+        <ul class="reviews">
+          <li class="review">
+            <blockquote class="review__quote">
+              <p>
+                Ходила на афрокосички впервые, боялась, что будет больно. Полина
+                всё объяснила, плела аккуратно, я почти заснула. Через месяц
+                косички как новые, свои волосы целые.
+              </p>
+            </blockquote>
+            <footer class="review__author">
+              <span class="review__avatar" aria-hidden="true">А</span>
+              <div>
+                <cite class="review__name">Анна</cite>
+                <p class="review__meta">Афрокосички с канекалоном</p>
+              </div>
+            </footer>
+          </li>
+
+          <li class="review">
+            <blockquote class="review__quote">
+              <p>
+                Делал дреды, хотел что-то нестандартное. Полина предложила решение
+                с тонированием — получилось именно то, что искал. Отдельное
+                спасибо за выезд на дом.
+              </p>
+            </blockquote>
+            <footer class="review__author">
+              <span class="review__avatar" aria-hidden="true">М</span>
+              <div>
+                <cite class="review__name">Максим</cite>
+                <p class="review__meta">Дреды с тонированием</p>
+              </div>
+            </footer>
+          </li>
+
+          <li class="review">
+            <blockquote class="review__quote">
+              <p>
+                Заплетала дочку на выпускной. Полина нашла подход, дочка сидела
+                спокойно, а причёска держалась почти два месяца. Обязательно
+                придём ещё.
+              </p>
+            </blockquote>
+            <footer class="review__author">
+              <span class="review__avatar" aria-hidden="true">Е</span>
+              <div>
+                <cite class="review__name">Екатерина</cite>
+                <p class="review__meta">Детские косички с бусинами</p>
+              </div>
+            </footer>
           </li>
         </ul>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- Секция 6: КОНТАКТЫ / CTA -->
+    <section class="section section--muted" id="contacts" aria-labelledby="contacts-title">
+      <div class="container">
+        <div class="cta">
+          <div class="cta__content">
+            <p class="section__eyebrow">Запись</p>
+            <h2 class="section__title" id="contacts-title">
+              Готовы к новым волосам?
+            </h2>
+            <p class="cta__lead">
+              Напишите — обсудим идею, подберём дату и точную стоимость.
+              Отвечаю в течение часа в рабочее время.
+            </p>
 
-<!-- Секция 4: ПРОЦЕСС -->
-<section class="section section--muted" id="process" aria-labelledby="process-title">
-  <div class="container">
-    <div class="section__head">
-      <p class="section__eyebrow">Как записаться</p>
-      <h2 class="section__title" id="process-title">Четыре шага до новых волос</h2>
-      <p class="section__lead">
-        От первого сообщения до готовой причёски — обычно не больше недели.
-      </p>
-    </div>
-
-    <ol class="process">
-      <li class="process__step">
-        <span class="process__number" aria-hidden="true">01</span>
-        <h3 class="process__title">Заявка</h3>
-        <p class="process__text">
-          Напишите в Instagram или Telegram. Расскажите, какую причёску хотите
-          и когда удобно прийти.
-        </p>
-      </li>
-
-      <li class="process__step">
-        <span class="process__number" aria-hidden="true">02</span>
-        <h3 class="process__title">Консультация</h3>
-        <p class="process__text">
-          Обсудим детали: длину, цвет, тип плетения. Посчитаю точную стоимость
-          и время работы.
-        </p>
-      </li>
-
-      <li class="process__step">
-        <span class="process__number" aria-hidden="true">03</span>
-        <h3 class="process__title">Плетение</h3>
-        <p class="process__text">
-          Приходите в студию или заказывайте выезд на дом. Работа занимает
-          от 4 до 12 часов в зависимости от сложности.
-        </p>
-      </li>
-
-      <li class="process__step">
-        <span class="process__number" aria-hidden="true">04</span>
-        <h3 class="process__title">Уход</h3>
-        <p class="process__text">
-          Даю рекомендации по уходу и бесплатную коррекцию в первые две недели,
-          если что-то нужно поправить.
-        </p>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- Секция 5: ОТЗЫВЫ -->
-<section class="section" id="reviews" aria-labelledby="reviews-title">
-  <div class="container">
-    <div class="section__head">
-      <p class="section__eyebrow">Отзывы</p>
-      <h2 class="section__title" id="reviews-title">Что говорят клиенты</h2>
-      <p class="section__lead">
-        Больше отзывов — в закреплённых сторис и в Instagram.
-      </p>
-    </div>
-
-    <ul class="reviews">
-      <li class="review">
-        <blockquote class="review__quote">
-          <p>
-            Ходила на афрокосички впервые, боялась, что будет больно. Полина
-            всё объяснила, плела аккуратно, я почти заснула. Через месяц
-            косички как новые, свои волосы целые.
-          </p>
-        </blockquote>
-        <footer class="review__author">
-          <span class="review__avatar" aria-hidden="true">А</span>
-          <div>
-            <cite class="review__name">Анна</cite>
-            <p class="review__meta">Афрокосички с канекалоном</p>
-          </div>
-        </footer>
-      </li>
-
-      <li class="review">
-        <blockquote class="review__quote">
-          <p>
-            Делал дреды, хотел что-то нестандартное. Полина предложила решение
-            с тонированием — получилось именно то, что искал. Отдельное
-            спасибо за выезд на дом.
-          </p>
-        </blockquote>
-        <footer class="review__author">
-          <span class="review__avatar" aria-hidden="true">М</span>
-          <div>
-            <cite class="review__name">Максим</cite>
-            <p class="review__meta">Дреды с тонированием</p>
-          </div>
-        </footer>
-      </li>
-
-      <li class="review">
-        <blockquote class="review__quote">
-          <p>
-            Заплетала дочку на выпускной. Полина нашла подход, дочка сидела
-            спокойно, а причёска держалась почти два месяца. Обязательно
-            придём ещё.
-          </p>
-        </blockquote>
-        <footer class="review__author">
-          <span class="review__avatar" aria-hidden="true">Е</span>
-          <div>
-            <cite class="review__name">Екатерина</cite>
-            <p class="review__meta">Детские косички с бусинами</p>
-          </div>
-        </footer>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- Секция 6: КОНТАКТЫ / CTA -->
-<section class="section section--muted" id="contacts" aria-labelledby="contacts-title">
-  <div class="container">
-    <div class="cta">
-      <div class="cta__content">
-        <p class="section__eyebrow">Запись</p>
-        <h2 class="section__title" id="contacts-title">
-          Готовы к новым волосам?
-        </h2>
-        <p class="cta__lead">
-          Напишите — обсудим идею, подберём дату и точную стоимость.
-          Отвечаю в течение часа в рабочее время.
-        </p>
-
-        <div class="cta__actions">
-          <a
-            class="btn btn--primary"
-            href="https://instagram.com/zizitop.by"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Написать в Instagram
-          </a>
-          <a
-            class="btn btn--ghost"
-            href="https://t.me/zizitop"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Telegram
-          </a>
-        </div>
-
-        <ul class="cta__contacts">
-          <li class="cta__contact">
-            <span class="cta__contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
-            </span>
-            <a class="cta__contact-link" href="tel:+375000000000">+375 (00) 000-00-00</a>
-          </li>
-
-          <li class="cta__contact">
-            <span class="cta__contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </span>
-            <span>Минск, м. Восток · выезд на дом</span>
-          </li>
-
-          <li class="cta__contact">
-            <span class="cta__contact-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-              </svg>
-            </span>
-            <span>Ежедневно с 10:00 до 21:00</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="cta__visual" aria-hidden="true">
-        <div class="cta__blob"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-
-                <div>
-                    <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
-                        <span class="logo__mark">ZIZITOP</span>
-                        <span class="logo__suffix">.by</span>
-                    </a>
-                    <p class="footer__text" style="margin-top: var(--sp-sm);">
-                        Безопасное плетение афрокосичек, дредов и зизи в Минске.
-                        Более 10 лет опыта, выезд на дом.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="footer__title">Контакты</h2>
-                    <ul class="footer__list">
-                        <li>
-                            <a class="footer__link" href="tel:+375000000000">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
-                                </svg>
-                                +375 (00) 000-00-00
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank"
-                                rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" />
-                                    <circle cx="12" cy="12" r="4" />
-                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-                                </svg>
-                                @zizitop.by
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="https://yandex.by/maps/?text=Минск%20метро%20Восток"
-                                target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                Минск, м. Восток
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h2 class="footer__title">Соцсети</h2>
-                    <ul class="footer__list">
-                        <li>
-                            <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank"
-                                rel="noopener noreferrer">Instagram</a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="https://t.me/zizitop" target="_blank"
-                                rel="noopener noreferrer">Telegram</a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="catalog.html">Каталог услуг</a>
-                        </li>
-                    </ul>
-                </div>
-
+            <div class="cta__actions">
+              <a class="btn btn--primary" href="https://instagram.com/zizitop.by" target="_blank"
+                rel="noopener noreferrer">
+                Написать в Instagram
+              </a>
+              <a class="btn btn--ghost" href="https://t.me/zizitop" target="_blank" rel="noopener noreferrer">
+                Telegram
+              </a>
             </div>
 
-            <div class="footer__bottom">
-                <p>© 2026 ZIZITOP.by — все права защищены.</p>
-                <a class="footer__rss" href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer"
-                    aria-label="RS School — курс JavaScript/Front-end">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M8 12h8M12 8v8" />
-                    </svg>
-                    RS School
-                </a>
-            </div>
-        </div>
-    </footer>
+            <ul class="cta__contacts">
+              <li class="cta__contact">
+                <span class="cta__contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </span>
+                <a class="cta__contact-link" href="tel:+375000000000">+375 (00) 000-00-00</a>
+              </li>
 
-    <script type="module" src="scripts/theme.js"></script>
+              <li class="cta__contact">
+                <span class="cta__contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </span>
+                <span>Минск, м. Восток · выезд на дом</span>
+              </li>
+
+              <li class="cta__contact">
+                <span class="cta__contact-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                </span>
+                <span>Ежедневно с 10:00 до 21:00</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cta__visual" aria-hidden="true">
+            <div class="cta__blob"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div>
+          <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
+            <span class="logo__mark">ZIZITOP</span>
+            <span class="logo__suffix">.by</span>
+          </a>
+          <p class="footer__text" style="margin-top: var(--sp-sm);">
+            Безопасное плетение афрокосичек, дредов и зизи в Минске.
+            Более 10 лет опыта, выезд на дом.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer__title">Контакты</h2>
+          <ul class="footer__list">
+            <li>
+              <a class="footer__link" href="tel:+375000000000">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +375 (00) 000-00-00
+              </a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+                @zizitop.by
+              </a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://yandex.by/maps/?text=Минск%20метро%20Восток" target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Минск, м. Восток
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer__title">Соцсети</h2>
+          <ul class="footer__list">
+            <li>
+              <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank"
+                rel="noopener noreferrer">Instagram</a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://t.me/zizitop" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </li>
+            <li>
+              <a class="footer__link" href="catalog.html">Каталог услуг</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 ZIZITOP.by — все права защищены.</p>
+        <a class="footer__rss" href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer"
+          aria-label="RS School — курс JavaScript/Front-end">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12h8M12 8v8" />
+          </svg>
+          RS School
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="scripts/theme.js"></script>
+  <script type="module" src="scripts/burger.js"></script>
 </body>
 
 </html>
