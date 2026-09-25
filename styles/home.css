@@ -274,6 +274,12 @@
     gap: var(--sp-md);
     margin-top: var(--sp-lg);
 }
+@media (max-width: 30em) {   /* ≤480px */
+  .slider__controls {
+    margin-top: var(--sp-sm);   /* 16px вместо 32px */
+    gap: var(--sp-sm);
+  }
+}
 
 .slider__arrow {
     display: inline-grid;
