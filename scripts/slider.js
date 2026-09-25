@@ -44,7 +44,6 @@ const initSlider = () => {
     currentIndex = index;
 
     // Ширина viewport + gap между слайдами
-    const viewport = slider.querySelector('.slider__viewport');
     const trackStyle = getComputedStyle(track);
     const gap = parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
 
@@ -106,14 +105,15 @@ const initSlider = () => {
   updateMetrics();
 
   // Пересчёт при изменении размера окна
+  let lastWidth = window.innerWidth;
   let resizeTimer = null;
   window.addEventListener('resize', () => {
-  const currentWidth = window.innerWidth;
-  if (currentWidth === lastWidth) return;
-  lastWidth = currentWidth;
+    const currentWidth = window.innerWidth;
+    if (currentWidth === lastWidth) return;
+    lastWidth = currentWidth;
 
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(updateMetrics, 150);
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(updateMetrics, 150);
   });
 };
 

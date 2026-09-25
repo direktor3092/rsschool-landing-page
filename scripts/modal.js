@@ -135,9 +135,6 @@ const initModal = () => {
       group.appendChild(list);
       optionsForm.appendChild(group);
     });
-
-    // Слушаем изменения — динамический пересчёт
-    optionsForm.addEventListener('change', recalcSummary);
   };
 
   // ---------- Заполнение модалки ----------
@@ -238,7 +235,8 @@ const initModal = () => {
     const li = card.closest('[data-id]');
     if (li) openModal(li.dataset.id);
   });
-
+  
+  optionsForm.addEventListener('change', recalcSummary);
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 
