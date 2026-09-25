@@ -108,8 +108,12 @@ const initSlider = () => {
   // Пересчёт при изменении размера окна
   let resizeTimer = null;
   window.addEventListener('resize', () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(updateMetrics, 150);
+  const currentWidth = window.innerWidth;
+  if (currentWidth === lastWidth) return;
+  lastWidth = currentWidth;
+
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(updateMetrics, 150);
   });
 };
 

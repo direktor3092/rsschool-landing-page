@@ -13,8 +13,8 @@ function initCatalog() {
 
   // Сколько карточек показывать изначально в зависимости от ширины
   const getInitialCount = () => {
-  if (window.matchMedia('(min-width: 40em)').matches) return 4;   // ≥640
-  return 2;                                                        // <640
+    if (window.matchMedia('(min-width: 40em)').matches) return 4;   // ≥640
+    return 2;                                                        // <640
   };
 
   // ---------- Генерация одной карточки ----------
@@ -131,6 +131,13 @@ function initCatalog() {
 
   let resizeTimer = null;
   window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+
+    // Если ширина не изменилась — игнорируем (например, скрытие адресной строки)
+    if (currentWidth === lastWidth) return;
+
+    lastWidth = currentWidth;
+
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       const activeTab = document.querySelector('[data-category].is-active');
