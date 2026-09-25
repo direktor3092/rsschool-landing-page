@@ -128,14 +128,11 @@ function initCatalog() {
   });
 
   // ---------- Ресайз ----------
-
+  let lastWidth = window.innerWidth;
   let resizeTimer = null;
   window.addEventListener('resize', () => {
     const currentWidth = window.innerWidth;
-
-    // Если ширина не изменилась — игнорируем (например, скрытие адресной строки)
     if (currentWidth === lastWidth) return;
-
     lastWidth = currentWidth;
 
     clearTimeout(resizeTimer);
