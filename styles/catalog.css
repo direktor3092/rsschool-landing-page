@@ -255,7 +255,7 @@
 
 @media (min-width: 48em) {
   .modal__dialog {
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
     overflow: hidden;
   }
 }
@@ -310,6 +310,7 @@
 
 .modal__content {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--sp-md);
   padding: var(--sp-xl) var(--sp-lg);
   align-content: start;
@@ -454,6 +455,8 @@
 
 .modal__cta {
   width: 100%;
+  min-width: 0;
+  justify-self: stretch;
 }
 
 /* --- Анимации --- */
