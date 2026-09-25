@@ -242,7 +242,7 @@
   position: relative;
   width: 100%;
   max-width: 56rem;
-  max-height: calc(100vh - var(--sp-lg) * 2);
+  max-height: calc(100dvh - var(--sp-md) * 2);
   overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--c-surface);
@@ -368,18 +368,19 @@
 
 .option {
   position: relative;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  gap: var(--sp-2xs);
-  padding: 0.55em 1em;
-  border-radius: var(--radius-pill);
+  gap: 0.5em 0.75em;
+  padding: 0.6em 1em;
+  border-radius: var(--radius-md);
   border: 1px solid var(--c-border);
   background-color: var(--c-surface);
   font-size: var(--fs-sm);
   font-weight: var(--fw-medium);
   color: var(--c-text);
   cursor: pointer;
-  max-width: 100%;   
+  max-width: 100%;
   transition: border-color var(--dur) var(--ease),
     background-color var(--dur) var(--ease),
     color var(--dur) var(--ease);
@@ -407,8 +408,10 @@
 }
 
 .option__price {
-  font-size: var(--fs-xs);
+ font-size: var(--fs-xs);
   opacity: 0.75;
+  white-space: nowrap;
+  justify-self: end;
 }
 
 /* --- Итог и CTA --- */
