@@ -238,7 +238,9 @@
   inset: 4.5rem 0 0 0;
   /* под header-ом (его высота ~4.5rem) */
   z-index: 99;
-  background-color: var(--c-bg);
+   background-color: color-mix(in srgb, var(--c-bg) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--c-border);
   opacity: 0;
   visibility: hidden;
