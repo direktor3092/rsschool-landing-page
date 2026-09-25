@@ -229,8 +229,65 @@
       </div>
     </div>
   </footer>
+<!-- Модальное окно услуги -->
+<div
+  class="modal"
+  id="service-modal"
+  data-modal
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+  hidden
+>
+  <div class="modal__overlay" data-modal-overlay></div>
 
+  <div class="modal__dialog" role="document">
+    <button
+      class="modal__close"
+      type="button"
+      data-modal-close
+      aria-label="Закрыть окно"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <div class="modal__media">
+      <picture>
+        <source type="image/avif" data-modal-source-avif>
+        <source type="image/webp" data-modal-source-webp>
+        <img class="modal__image" data-modal-image src="" alt="" width="960" height="1280">
+      </picture>
+    </div>
+
+    <div class="modal__content">
+      <h2 class="modal__title" id="modal-title" data-modal-title></h2>
+      <p class="modal__text" data-modal-text></p>
+
+      <form class="modal__options" data-modal-options></form>
+
+      <div class="modal__summary">
+        <dl class="modal__summary-list">
+          <div>
+            <dt>Итого</dt>
+            <dd data-modal-price></dd>
+          </div>
+          <div>
+            <dt>Время</dt>
+            <dd data-modal-duration></dd>
+          </div>
+        </dl>
+
+        <a class="btn btn--primary modal__cta" href="index.html#contacts">
+          Записаться
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
   <script type="module" src="scripts/theme.js"></script>
   <script type="module" src="scripts/burger.js"></script>
   <script type="module" src="scripts/catalog.js"></script>
+  <script type="module" src="scripts/modal.js"></script>
 </body>
