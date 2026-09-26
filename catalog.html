@@ -2,626 +2,292 @@
 <html lang="ru" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZIZITOP — афрокосички и дреды в Минске</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/icons/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
-    <!-- Тема до отрисовки, чтобы не было вспышки -->
-    <script>
-        (() => {
-            const stored = localStorage.getItem('theme');
-            const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
-            document.documentElement.dataset.theme = stored ?? (prefersDark ? 'dark' : 'light');
-        })();
-    </script>
-    <link rel="preload" href="assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/unbounded-600.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="styles/fonts.css">
-    <link rel="stylesheet" href="styles/tokens.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/components.css">
-    <link rel="stylesheet" href="styles/catalog.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZIZITOP — афрокосички и дреды в Минске</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/icons/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+  <!-- Тема до отрисовки, чтобы не было вспышки -->
+  <script>
+    (() => {
+      const stored = localStorage.getItem('theme');
+      const prefersDark = matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = stored ?? (prefersDark ? 'dark' : 'light');
+    })();
+  </script>
+  <link rel="preload" href="assets/fonts/manrope-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/unbounded-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles/fonts.css">
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/catalog.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__inner container">
-            <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
-                <span class="logo__mark">ZIZITOP</span>
-                <span class="logo__suffix">.by</span>
-            </a>
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
+        <span class="logo__mark">ZIZITOP</span>
+        <span class="logo__suffix">.by</span>
+      </a>
 
-            <nav class="nav" aria-label="Основная навигация">
-                <ul class="nav__list">
-                    <li><a class="nav__link" href="index.html#works">Работы</a></li>
-                    <li><a class="nav__link" href="index.html#about">О мастере</a></li>
-                    <li><a class="nav__link" href="index.html#process">Как записаться</a></li>
-                    <li><a class="nav__link" href="catalog.html">Каталог</a></li>
-                    <li><a class="nav__link" href="index.html#contacts">Контакты</a></li>
-                </ul>
-            </nav>
-
-            <div class="header__actions">
-                <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false"
-                    aria-label="Включить тёмную тему">
-                    <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        aria-hidden="true">
-                        <circle cx="12" cy="12" r="4" />
-                        <path
-                            d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-                    </svg>
-                    <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                        aria-hidden="true">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-                    </svg>
-                </button>
-
-                <button class="icon-btn burger" type="button" data-burger aria-expanded="false"
-                    aria-controls="mobile-menu" aria-label="Открыть меню">
-                    <span class="burger__box" aria-hidden="true">
-                        <span class="burger__line"></span>
-                        <span class="burger__line"></span>
-                        <span class="burger__line"></span>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-<main id="main">
-
-  <section class="section section--catalog" aria-labelledby="catalog-title">
-    <div class="container">
-
-      <div class="section__head">
-        <p class="section__eyebrow">Каталог</p>
-        <h1 class="section__title" id="catalog-title">Услуги ZIZITOP</h1>
-        <p class="section__lead">
-          Афрокосички, дреды, зизи, детские причёски и уход. Цены указаны
-          «от» — точная стоимость зависит от длины и дополнительных услуг.
-          Откройте карточку, чтобы посмотреть детали.
-        </p>
-      </div>
-
-      <h2 class="visually-hidden" id="catalog-grid-title">Список услуг</h2>
-
-      <div class="catalog__categories" role="tablist" aria-label="Категории услуг">
-        <button
-          class="catalog__category is-active"
-          type="button" role="tab"
-          aria-selected="true"
-          aria-controls="panel-afro"
-          id="tab-afro"
-          data-category="afro"
-        >Афрокосички</button>
-        <button
-          class="catalog__category"
-          type="button" role="tab"
-          aria-selected="false"
-          aria-controls="panel-dreads"
-          id="tab-dreads"
-          data-category="dreads"
-        >Дреды</button>
-        <button
-          class="catalog__category"
-          type="button" role="tab"
-          aria-selected="false"
-          aria-controls="panel-kids"
-          id="tab-kids"
-          data-category="kids"
-        >Детям и уход</button>
-      </div>
-
-      <!-- Панель 1: Афрокосички -->
-      <div
-        class="catalog__panel is-active"
-        id="panel-afro"
-        role="tabpanel"
-        aria-labelledby="tab-afro"
-        data-panel="afro"
-      >
-        <ul class="catalog__grid" data-grid>
-                    <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-01-480.avif 480w, assets/images/catalog/afro-01-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-01-480.webp 480w, assets/images/catalog/afro-01-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-01-960.jpg" alt="Классические афрокосички с канекалоном омбре" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Классические афрокосички</h3>
-                <p class="card__text">Аккуратные косички по всей голове. Носятся 2–3 месяца.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 250 BYN</dd></div>
-                  <div><dt>Время</dt><dd>5–7 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-02-480.avif 480w, assets/images/catalog/afro-02-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-02-480.webp 480w, assets/images/catalog/afro-02-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-02-960.jpg" alt="Косички зизи, объёмная причёска" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Косички зизи</h3>
-                <p class="card__text">Мягкие объёмные косички, дают густоту и длину.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 200 BYN</dd></div>
-                  <div><dt>Время</dt><dd>4–6 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-03-480.avif 480w, assets/images/catalog/afro-03-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-03-480.webp 480w, assets/images/catalog/afro-03-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-03-960.jpg" alt="Афрокосички с пони-тейл и тонированием" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Афрокосички с пони-тейл</h3>
-                <p class="card__text">Плетение с собранным хвостом, аккуратный силуэт.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 280 BYN</dd></div>
-                  <div><dt>Время</dt><dd>6–8 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-04-480.avif 480w, assets/images/catalog/afro-04-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-04-480.webp 480w, assets/images/catalog/afro-04-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-04-960.jpg" alt="Косички омбре с плавным переходом цвета" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Косички омбре</h3>
-                <p class="card__text">Плавный переход оттенков от корней к концам.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 320 BYN</dd></div>
-                  <div><dt>Время</dt><dd>6–9 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-05-480.avif 480w, assets/images/catalog/afro-05-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-05-480.webp 480w, assets/images/catalog/afro-05-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-05-960.jpg" alt="Сенегальские косички тонкого плетения" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Сенегальские косички</h3>
-                <p class="card__text">Лёгкие тонкие косички, почти не ощущаются на голове.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 240 BYN</dd></div>
-                  <div><dt>Время</dt><dd>5–7 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-06-480.avif 480w, assets/images/catalog/afro-06-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-06-480.webp 480w, assets/images/catalog/afro-06-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-06-960.jpg" alt="Жгуты с канекалоном, плотная текстура" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Жгуты с канекалоном</h3>
-                <p class="card__text">Двухпрядные жгуты с объёмом и плотной текстурой.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 220 BYN</dd></div>
-                  <div><dt>Время</dt><dd>4–5 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-07-480.avif 480w, assets/images/catalog/afro-07-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-07-480.webp 480w, assets/images/catalog/afro-07-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-07-960.jpg" alt="Афрокосички с тонированием насыщенного цвета" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Афрокосички с тонированием</h3>
-                <p class="card__text">Классика с окрашиванием для глубокого цвета.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 340 BYN</dd></div>
-                  <div><dt>Время</dt><dd>7–9 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/afro-08-480.avif 480w, assets/images/catalog/afro-08-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/afro-08-480.webp 480w, assets/images/catalog/afro-08-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/afro-08-960.jpg" alt="Мужские косы на андеркат с выбритыми висками" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Косы на андеркат</h3>
-                <p class="card__text">Мужская укладка с выбритыми висками и косой назад.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 180 BYN</dd></div>
-                  <div><dt>Время</dt><dd>3–4 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html#works">Работы</a></li>
+          <li><a class="nav__link" href="index.html#about">О мастере</a></li>
+          <li><a class="nav__link" href="index.html#process">Как записаться</a></li>
+          <li><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <li><a class="nav__link" href="index.html#contacts">Контакты</a></li>
         </ul>
+      </nav>
 
-        <div class="catalog__more">
-          <button class="btn btn--ghost catalog__more-btn" type="button" data-show-more>
-            Показать ещё
-          </button>
-        </div>
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-pressed="false"
+          aria-label="Включить тёмную тему">
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+
+        <button class="icon-btn burger" type="button" data-burger aria-expanded="false" aria-controls="mobile-menu"
+          aria-label="Открыть меню">
+          <span class="burger__box" aria-hidden="true">
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+            <span class="burger__line"></span>
+          </span>
+        </button>
       </div>
-
-      <!-- Панель 2: Дреды -->
-      <div
-        class="catalog__panel"
-        id="panel-dreads"
-        role="tabpanel"
-        aria-labelledby="tab-dreads"
-        data-panel="dreads"
-        hidden
-      >
-        <ul class="catalog__grid" data-grid>
-                    <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/dreads-01-480.avif 480w, assets/images/catalog/dreads-01-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/dreads-01-480.webp 480w, assets/images/catalog/dreads-01-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/dreads-01-960.jpg" alt="Классические дреды по всей голове" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Классические дреды</h3>
-                <p class="card__text">Плотные дреды по всей голове, носятся от полугода.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 400 BYN</dd></div>
-                  <div><dt>Время</dt><dd>8–12 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/dreads-02-480.avif 480w, assets/images/catalog/dreads-02-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/dreads-02-480.webp 480w, assets/images/catalog/dreads-02-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/dreads-02-960.jpg" alt="Дреды с тонированием насыщенного цвета" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Дреды с тонированием</h3>
-                <p class="card__text">Дреды с окрашиванием для насыщенного оттенка.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 480 BYN</dd></div>
-                  <div><dt>Время</dt><dd>9–12 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/dreads-03-480.avif 480w, assets/images/catalog/dreads-03-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/dreads-03-480.webp 480w, assets/images/catalog/dreads-03-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/dreads-03-960.jpg" alt="Дреды с эффектом омбре" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Дреды с омбре</h3>
-                <p class="card__text">Плавный переход цвета — от тёмных корней к светлым концам.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 520 BYN</dd></div>
-                  <div><dt>Время</dt><dd>10–14 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/dreads-04-480.avif 480w, assets/images/catalog/dreads-04-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/dreads-04-480.webp 480w, assets/images/catalog/dreads-04-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/dreads-04-960.jpg" alt="Зизи-дреды с мягкой текстурой" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Зизи-дреды</h3>
-                <p class="card__text">Мягкие синтетические дреды с эффектом естественности.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 380 BYN</dd></div>
-                  <div><dt>Время</dt><dd>7–10 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/dreads-05-480.avif 480w, assets/images/catalog/dreads-05-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/dreads-05-480.webp 480w, assets/images/catalog/dreads-05-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/dreads-05-960.jpg" alt="Короткие мужские дреды средней длины" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Короткие мужские дреды</h3>
-                <p class="card__text">Аккуратные дреды средней длины, под мужской образ.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 300 BYN</dd></div>
-                  <div><dt>Время</dt><dd>6–8 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/dreads-06-480.avif 480w, assets/images/catalog/dreads-06-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/dreads-06-480.webp 480w, assets/images/catalog/dreads-06-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/dreads-06-960.jpg" alt="Длинные дреды с глубоким градиентом омбре" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Длинные дреды с омбре</h3>
-                <p class="card__text">Максимальная длина с глубоким градиентом цвета.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 560 BYN</dd></div>
-                  <div><dt>Время</dt><dd>11–14 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-        </ul>
-
-        <div class="catalog__more">
-          <button class="btn btn--ghost catalog__more-btn" type="button" data-show-more hidden>
-            Показать ещё
-          </button>
-        </div>
-      </div>
-
-      <!-- Панель 3: Детям и уход -->
-      <div
-        class="catalog__panel"
-        id="panel-kids"
-        role="tabpanel"
-        aria-labelledby="tab-kids"
-        data-panel="kids"
-        hidden
-      >
-        <ul class="catalog__grid" data-grid>
-                    <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/kids-01-480.avif 480w, assets/images/catalog/kids-01-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/kids-01-480.webp 480w, assets/images/catalog/kids-01-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/kids-01-960.jpg" alt="Детские косички с бусинами и резинками" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Детские косички с бусинами</h3>
-                <p class="card__text">Аккуратные косички с бусинами и яркими резинками.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 150 BYN</dd></div>
-                  <div><dt>Время</dt><dd>3–4 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/kids-02-480.avif 480w, assets/images/catalog/kids-02-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/kids-02-480.webp 480w, assets/images/catalog/kids-02-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/kids-02-960.jpg" alt="Детские косички зизи" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Детские зизи</h3>
-                <p class="card__text">Мягкие косички для девочек, не тянут кожу.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 130 BYN</dd></div>
-                  <div><dt>Время</dt><dd>2–3 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/kids-03-480.avif 480w, assets/images/catalog/kids-03-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/kids-03-480.webp 480w, assets/images/catalog/kids-03-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/kids-03-960.jpg" alt="Подростковые дреды без натяжения кожи" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Детские дреды</h3>
-                <p class="card__text">Безопасные дреды для подростков, без натяжения.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 180 BYN</dd></div>
-                  <div><dt>Время</dt><dd>4–5 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/kids-04-480.avif 480w, assets/images/catalog/kids-04-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/kids-04-480.webp 480w, assets/images/catalog/kids-04-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/kids-04-960.jpg" alt="Коррекция плетения у корней" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Коррекция плетения</h3>
-                <p class="card__text">Обновление корней и зон роста для продления носки.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 120 BYN</dd></div>
-                  <div><dt>Время</dt><dd>2–3 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/kids-05-480.avif 480w, assets/images/catalog/kids-05-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/kids-05-480.webp 480w, assets/images/catalog/kids-05-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/kids-05-960.jpg" alt="Аккуратное снятие плетения" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Снятие плетения</h3>
-                <p class="card__text">Аккуратное снятие без повреждения родных волос.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 80 BYN</dd></div>
-                  <div><dt>Время</dt><dd>1–2 ч</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-
-          <li class="card">
-            <article data-card>
-              <picture class="card__media">
-                <source type="image/avif" srcset="assets/images/catalog/kids-06-480.avif 480w, assets/images/catalog/kids-06-960.avif 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <source type="image/webp" srcset="assets/images/catalog/kids-06-480.webp 480w, assets/images/catalog/kids-06-960.webp 960w" sizes="(max-width: 30em) 100vw, (max-width: 64em) 50vw, 25vw">
-                <img class="card__image" src="assets/images/catalog/kids-06-960.jpg" alt="Уход за кожей головы после плетения" width="960" height="1280" loading="lazy" decoding="async">
-              </picture>
-              <div class="card__body">
-                <h3 class="card__title">Уход после плетения</h3>
-                <p class="card__text">Мытьё, увлажнение и обработка кожи головы.</p>
-                <dl class="card__meta">
-                  <div><dt>Цена</dt><dd>от 60 BYN</dd></div>
-                  <div><dt>Время</dt><dd>30 мин</dd></div>
-                </dl>
-              </div>
-            </article>
-          </li>
-        </ul>
-
-        <div class="catalog__more">
-          <button class="btn btn--ghost catalog__more-btn" type="button" data-show-more hidden>
-            Показать ещё
-          </button>
-        </div>
-      </div>
-
     </div>
-  </section>
+  </header>
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+      <ul class="mobile-menu__list">
+        <li><a class="mobile-menu__link" href="index.html#works">Работы</a></li>
+        <li><a class="mobile-menu__link" href="index.html#about">О мастере</a></li>
+        <li><a class="mobile-menu__link" href="index.html#process">Как записаться</a></li>
+        <li><a class="mobile-menu__link" href="catalog.html">Каталог</a></li>
+        <li><a class="mobile-menu__link" href="index.html#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+  <main id="main">
 
-</main>
+    <section class="section section--catalog" aria-labelledby="catalog-title">
+      <div class="container">
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-
-                <div>
-                    <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
-                        <span class="logo__mark">ZIZITOP</span>
-                        <span class="logo__suffix">.by</span>
-                    </a>
-                    <p class="footer__text" style="margin-top: var(--sp-sm);">
-                        Безопасное плетение афрокосичек, дредов и зизи в Минске.
-                        Более 10 лет опыта, выезд на дом.
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="footer__title">Контакты</h2>
-                    <ul class="footer__list">
-                        <li>
-                            <a class="footer__link" href="tel:+375000000000">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
-                                </svg>
-                                +375 (00) 000-00-00
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank"
-                                rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" />
-                                    <circle cx="12" cy="12" r="4" />
-                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-                                </svg>
-                                @zizitop.by
-                            </a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="https://yandex.by/maps/?text=Минск%20метро%20Восток"
-                                target="_blank" rel="noopener noreferrer">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                    <circle cx="12" cy="10" r="3" />
-                                </svg>
-                                Минск, м. Восток
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h2 class="footer__title">Соцсети</h2>
-                    <ul class="footer__list">
-                        <li>
-                            <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank"
-                                rel="noopener noreferrer">Instagram</a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="https://t.me/zizitop" target="_blank"
-                                rel="noopener noreferrer">Telegram</a>
-                        </li>
-                        <li>
-                            <a class="footer__link" href="catalog.html">Каталог услуг</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="footer__bottom">
-                <p>© 2026 ZIZITOP.by — все права защищены.</p>
-                <a class="footer__rss" href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer"
-                    aria-label="RS School — курс JavaScript/Front-end">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M8 12h8M12 8v8" />
-                    </svg>
-                    RS School
-                </a>
-            </div>
+        <div class="section__head">
+          <p class="section__eyebrow">Каталог</p>
+          <h1 class="section__title" id="catalog-title">Услуги ZIZITOP</h1>
+          <p class="section__lead">
+            Афрокосички, дреды, зизи, детские причёски и уход. Цены указаны
+            «от» — точная стоимость зависит от длины и дополнительных услуг.
+            Откройте карточку, чтобы посмотреть детали.
+          </p>
         </div>
-    </footer>
 
-    <script type="module" src="scripts/theme.js"></script>
+        <h2 class="visually-hidden" id="catalog-grid-title">Список услуг</h2>
+
+        <div class="catalog__categories" role="tablist" aria-label="Категории услуг">
+          <button class="catalog__category is-active" type="button" role="tab" aria-selected="true"
+            aria-controls="panel-afro" id="tab-afro" data-category="afro">Афрокосички</button>
+          <button class="catalog__category" type="button" role="tab" aria-selected="false" aria-controls="panel-dreads"
+            id="tab-dreads" data-category="dreads">Дреды</button>
+          <button class="catalog__category" type="button" role="tab" aria-selected="false" aria-controls="panel-kids"
+            id="tab-kids" data-category="kids">Детям и уход</button>
+        </div>
+
+        <!-- Панель 1: Афрокосички -->
+        <div class="catalog__panel is-active" id="panel-afro" role="tabpanel" aria-labelledby="tab-afro"
+          data-panel="afro">
+          <ul class="catalog__grid" data-grid></ul>
+          <div class="catalog__more">
+            <button class="btn btn--ghost catalog__more-btn" type="button" data-show-more hidden>
+              Показать ещё
+            </button>
+          </div>
+        </div>
+
+        <!-- Панель 2: Дреды -->
+        <div class="catalog__panel" id="panel-dreads" role="tabpanel" aria-labelledby="tab-dreads" data-panel="dreads"
+          hidden>
+          <ul class="catalog__grid" data-grid></ul>
+          <div class="catalog__more">
+            <button class="btn btn--ghost catalog__more-btn" type="button" data-show-more hidden>
+              Показать ещё
+            </button>
+          </div>
+        </div>
+
+        <!-- Панель 3: Детям и уход -->
+
+        <div class="catalog__panel" id="panel-kids" role="tabpanel" aria-labelledby="tab-kids" data-panel="kids" hidden>
+          <ul class="catalog__grid" data-grid></ul>
+          <div class="catalog__more">
+            <button class="btn btn--ghost catalog__more-btn" type="button" data-show-more hidden>
+              Показать ещё
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div>
+          <a class="logo" href="index.html" aria-label="ZIZITOP — на главную">
+            <span class="logo__mark">ZIZITOP</span>
+            <span class="logo__suffix">.by</span>
+          </a>
+          <p class="footer__text" style="margin-top: var(--sp-sm);">
+            Безопасное плетение афрокосичек, дредов и зизи в Минске.
+            Более 10 лет опыта, выезд на дом.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="footer__title">Контакты</h2>
+          <ul class="footer__list">
+            <li>
+              <a class="footer__link" href="tel:+375000000000">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +375 (00) 000-00-00
+              </a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+                @zizitop.by
+              </a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://yandex.by/maps/?text=Минск%20метро%20Восток" target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Минск, м. Восток
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2 class="footer__title">Соцсети</h2>
+          <ul class="footer__list">
+            <li>
+              <a class="footer__link" href="https://instagram.com/zizitop.by" target="_blank"
+                rel="noopener noreferrer">Instagram</a>
+            </li>
+            <li>
+              <a class="footer__link" href="https://t.me/zizitop" target="_blank" rel="noopener noreferrer">Telegram</a>
+            </li>
+            <li>
+              <a class="footer__link" href="catalog.html">Каталог услуг</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 ZIZITOP.by — все права защищены.</p>
+        <a class="footer__rss" href="https://rs.school/courses/javascript" target="_blank" rel="noopener noreferrer"
+          aria-label="RS School — курс JavaScript/Front-end">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 12h8M12 8v8" />
+          </svg>
+          RS School
+        </a>
+      </div>
+    </div>
+  </footer>
+<!-- Модальное окно услуги -->
+<div
+  class="modal"
+  id="service-modal"
+  data-modal
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="modal-title"
+  hidden
+>
+  <div class="modal__overlay" data-modal-overlay></div>
+
+  <div class="modal__dialog" role="document">
+    <button
+      class="modal__close"
+      type="button"
+      data-modal-close
+      aria-label="Закрыть окно"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <div class="modal__media">
+      <picture>
+        <source type="image/avif" data-modal-source-avif>
+        <source type="image/webp" data-modal-source-webp>
+        <img class="modal__image" data-modal-image src="" alt="" width="960" height="1280">
+      </picture>
+    </div>
+
+    <div class="modal__content">
+      <h2 class="modal__title" id="modal-title" data-modal-title></h2>
+      <p class="modal__text" data-modal-text></p>
+
+      <form class="modal__options" data-modal-options></form>
+
+      <div class="modal__summary">
+        <dl class="modal__summary-list">
+          <div>
+            <dt>Итого</dt>
+            <dd data-modal-price></dd>
+          </div>
+          <div>
+            <dt>Время</dt>
+            <dd data-modal-duration></dd>
+          </div>
+        </dl>
+
+        <a class="btn btn--primary modal__cta" href="index.html#contacts">
+          Записаться
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="module" src="scripts/theme.js"></script>
+  <script type="module" src="scripts/burger.js"></script>
+  <script type="module" src="scripts/catalog.js"></script>
+  <script type="module" src="scripts/modal.js"></script>
 </body>
