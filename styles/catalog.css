@@ -19,7 +19,12 @@
   max-width: 100%;
   transition: background-color var(--dur) var(--ease);
 }
-
+@media (max-width: 30em) {
+  .catalog__categories {
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+}
 .catalog__category {
   flex: 1 1 auto;
   display: inline-flex;
@@ -40,7 +45,11 @@
     border-color var(--dur) var(--ease),
     box-shadow var(--dur) var(--ease);
 }
-
+@media (max-width: 30em) {
+  .catalog__category {
+    border-radius: var(--radius-sm);
+  }
+}
 .catalog__category:hover,
 .catalog__category:focus-visible {
   color: var(--c-text);
