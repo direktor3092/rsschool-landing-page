@@ -8,6 +8,8 @@ const initModal = () => {
   const modal = document.querySelector('[data-modal]');
   if (!modal) return;
 
+  const dialog = modal.querySelector('.modal__dialog');
+
   const overlay = modal.querySelector('[data-modal-overlay]');
   const closeBtn = modal.querySelector('[data-modal-close]');
   const optionsForm = modal.querySelector('[data-modal-options]');
@@ -170,7 +172,7 @@ const initModal = () => {
     document.body.classList.add('is-modal-open');
 
     // Фокус на кнопку закрытия
-    closeBtn.focus();
+    dialog.focus();
 
     // Ловим фокус внутри модалки (простая версия focus trap)
     modal.addEventListener('keydown', trapFocus);

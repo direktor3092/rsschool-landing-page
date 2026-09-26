@@ -20,13 +20,6 @@
   transition: background-color var(--dur) var(--ease);
 }
 
-@media (max-width: 30em) {
-  .catalog__categories {
-    width: 100%;
-    border-radius: var(--radius-md);
-  }
-}
-
 .catalog__category {
   flex: 1 1 auto;
   display: inline-flex;
@@ -58,12 +51,6 @@
   color: var(--c-text);
   border-color: var(--c-border);
   box-shadow: var(--shadow-sm);
-}
-
-@media (max-width: 30em) {
-  .catalog__category {
-    border-radius: var(--radius-sm);
-  }
 }
 
 /* --- Панели --- */
@@ -273,14 +260,17 @@
   background-color: var(--c-surface);
   color: var(--c-text);
   transition: background-color var(--dur) var(--ease),
-    color var(--dur) var(--ease),
-    transform var(--dur) var(--ease);
+              color var(--dur) var(--ease);
 }
 
-.modal__close:hover,
-.modal__close:focus-visible {
+.modal__close:hover {
   background-color: var(--c-accent);
   color: var(--c-on-accent);
+}
+
+.modal__close:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
 }
 
 .modal__close svg {
