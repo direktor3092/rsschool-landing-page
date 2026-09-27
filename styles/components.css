@@ -26,8 +26,10 @@
   transition: background-color var(--dur) var(--ease);
 }
 
+@media (hover: hover) {
 .logo:hover .logo__mark {
   background: var(--c-accent-hover);
+}
 }
 
 .logo__suffix {
@@ -50,7 +52,7 @@
   -webkit-backdrop-filter: saturate(140%) blur(12px);
   border-bottom: 1px solid var(--c-border);
   transition: background-color var(--dur) var(--ease),
-              border-color var(--dur) var(--ease);
+    border-color var(--dur) var(--ease);
 }
 
 .header__inner {
@@ -87,7 +89,7 @@
   align-items: center;
   gap: var(--sp-md);
   margin: 0;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
 }
 
 .nav__link {
@@ -98,7 +100,7 @@
   font-weight: var(--fw-medium);
   color: var(--c-text);
   transition: color var(--dur) var(--ease);
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .nav__link::after {
@@ -113,13 +115,18 @@
   transform-origin: left;
   transition: transform var(--dur) var(--ease);
 }
+@media (hover: hover) {
+  .nav__link:hover {
+    color: var(--c-accent);
+  }
+  .nav__link:hover::after {
+    transform: scaleX(1);
+  }
+}
 
-.nav__link:hover,
 .nav__link:focus-visible {
   color: var(--c-accent);
 }
-
-.nav__link:hover::after,
 .nav__link:focus-visible::after {
   transform: scaleX(1);
 }
@@ -137,13 +144,23 @@
   color: var(--c-text);
   background-color: transparent;
   transition: background-color var(--dur) var(--ease),
-              color var(--dur) var(--ease);
+    color var(--dur) var(--ease);
+}
+@media (hover: hover) {
+  .icon-btn:hover {
+    background-color: var(--c-surface-2);
+    color: var(--c-accent);
+  }
 }
 
-.icon-btn:hover,
 .icon-btn:focus-visible {
   background-color: var(--c-surface-2);
   color: var(--c-accent);
+}
+.icon-btn:active {
+  background-color: var(--c-surface-2);
+  color: var(--c-accent);
+  transform: scale(0.92);
 }
 
 .icon-btn svg {
@@ -155,10 +172,17 @@
    Theme toggle
    -------------------------------------------------------------------------- */
 
-.theme-toggle .theme-toggle__icon--moon { display: none; }
+.theme-toggle .theme-toggle__icon--moon {
+  display: none;
+}
 
-[data-theme="dark"] .theme-toggle .theme-toggle__icon--sun  { display: none; }
-[data-theme="dark"] .theme-toggle .theme-toggle__icon--moon { display: block; }
+[data-theme="dark"] .theme-toggle .theme-toggle__icon--sun {
+  display: none;
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle__icon--moon {
+  display: block;
+}
 
 /* --------------------------------------------------------------------------
    Burger (виден только ≤768px)
@@ -193,25 +217,120 @@
               top var(--dur) var(--ease);
 }
 
-.burger__line:nth-child(1) { top: 0; }
-.burger__line:nth-child(2) { top: 50%; transform: translateY(-50%); }
-.burger__line:nth-child(3) { top: 100%; transform: translateY(-100%); }
+.burger__line:nth-child(1) {
+  top: 0;
+}
 
-/* Класс-модификатор переключим в Части 2 */
+.burger__line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger__line:nth-child(3) {
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+/* Класс-модификатор */
 .burger[aria-expanded="true"] .burger__line:nth-child(1) {
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
+
 .burger[aria-expanded="true"] .burger__line:nth-child(2) {
   opacity: 0;
 }
+
 .burger[aria-expanded="true"] .burger__line:nth-child(3) {
   top: 50%;
   transform: translateY(-50%) rotate(-45deg);
 }
 
 /* --------------------------------------------------------------------------
-   Button (базовые стили — CTA будем использовать)
+   Mobile menu
+   -------------------------------------------------------------------------- */
+
+.mobile-menu {
+  position: fixed;
+  inset: 4.5rem 0 0 0;
+  /* под header-ом (его высота ~4.5rem) */
+  z-index: 99;
+   background-color: color-mix(in srgb, var(--c-bg) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--c-border);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.5rem);
+  transition:
+    opacity var(--dur) var(--ease),        /* 400мс */
+    transform var(--dur) var(--ease),
+    visibility 0s linear var(--dur);
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+   transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    visibility 0s;
+}
+
+.mobile-menu__nav {
+  padding-block: var(--sp-lg);
+  padding-inline: var(--container-pad);
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.mobile-menu__list {
+  display: grid;
+  gap: var(--sp-2xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu__link {
+  display: block;
+  padding: var(--sp-sm) var(--sp-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-semibold);
+  letter-spacing: -0.02em;
+  color: var(--c-text);
+  border-radius: var(--radius-md);
+  transition: background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+@media (hover: hover) {
+  .mobile-menu__link:hover {
+    background-color: var(--c-surface-2);
+    color: var(--c-accent);
+  }
+}
+
+.mobile-menu__link:focus-visible {
+  background-color: var(--c-surface-2);
+  color: var(--c-accent);
+}
+
+/* На десктопе меню не показываем даже если оно открыто */
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Когда меню открыто — блокируем скролл body */
+body.is-menu-open {
+  overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Button
    -------------------------------------------------------------------------- */
 
 .btn {
@@ -230,9 +349,9 @@
   white-space: nowrap;
   cursor: pointer;
   transition: background-color var(--dur) var(--ease),
-              color var(--dur) var(--ease),
-              border-color var(--dur) var(--ease),
-              transform var(--dur) var(--ease);
+    color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
 }
 
 .btn--primary {
@@ -240,8 +359,16 @@
   color: var(--c-on-accent);
   border: 1px solid var(--c-accent);
 }
-
-.btn--primary:hover,
+@media (hover: hover) {
+  .btn--primary:hover {
+    background-color: var(--c-accent-hover);
+    border-color: var(--c-accent-hover);
+  }
+}
+.btn--primary:active {
+  background-color: var(--c-accent-hover);
+  border-color: var(--c-accent-hover);
+}
 .btn--primary:focus-visible {
   background-color: var(--c-accent-hover);
   border-color: var(--c-accent-hover);
@@ -252,15 +379,24 @@
   color: var(--c-text);
   border: 1px solid var(--c-border);
 }
+@media (hover: hover) {
+  .btn--ghost:hover {
+    border-color: var(--c-accent);
+    color: var(--c-accent);
+  }
+}
 
-.btn--ghost:hover,
 .btn--ghost:focus-visible {
   border-color: var(--c-accent);
   color: var(--c-accent);
 }
-
+.btn--ghost:active {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
 .btn:active {
   transform: translateY(1px);
+  
 }
 
 /* --------------------------------------------------------------------------
@@ -273,7 +409,7 @@
   background-color: var(--c-surface-2);
   border-top: 1px solid var(--c-border);
   transition: background-color var(--dur) var(--ease),
-              border-color var(--dur) var(--ease);
+    border-color var(--dur) var(--ease);
 }
 
 .footer__grid {
@@ -317,8 +453,12 @@
   font-size: var(--fs-sm);
   transition: color var(--dur) var(--ease);
 }
+@media (hover: hover) {
+  .footer__link:hover {
+    color: var(--c-accent);
+  }
+}
 
-.footer__link:hover,
 .footer__link:focus-visible {
   color: var(--c-accent);
 }
@@ -349,8 +489,12 @@
   font-weight: var(--fw-medium);
   transition: color var(--dur) var(--ease);
 }
+@media (hover: hover) {
+  .footer__rss:hover {
+    color: var(--c-accent);
+  }
+}
 
-.footer__rss:hover,
 .footer__rss:focus-visible {
   color: var(--c-accent);
 }
@@ -359,8 +503,11 @@
   width: 1.5rem;
   height: 1.5rem;
 }
+
 /* Компактная навигация в диапазоне, где она уже видна, но места мало */
-@media (min-width: 48em) and (max-width: 64em) {   /* 768px – 1024px */
+@media (min-width: 48em) and (max-width: 64em) {
+
+  /* 768px – 1024px */
   .header__inner {
     gap: var(--sp-sm);
   }
@@ -379,5 +526,102 @@
 
   .header__actions {
     gap: var(--sp-3xs);
+  }
+}
+/* --------------------------------------------------------------------------
+   Sticky header — тень при скролле
+   -------------------------------------------------------------------------- */
+
+.header.is-scrolled {
+  background-color: color-mix(in srgb, var(--c-bg) 96%, transparent);
+  box-shadow: 0 8px 24px -8px rgb(14 13 15 / 0.18);
+}
+
+[data-theme="dark"] .header.is-scrolled {
+  box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   Fade-in при скролле
+   -------------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 500ms var(--ease), transform 500ms var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --------------------------------------------------------------------------
+   Кнопка «Наверх»
+   -------------------------------------------------------------------------- */
+
+.to-top {
+  position: fixed;
+  right: var(--sp-sm);
+  bottom: var(--sp-sm);
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--c-accent);
+  color: var(--c-on-accent);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.5rem);
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    visibility 0s linear var(--dur),
+    background-color var(--dur) var(--ease);
+}
+
+.to-top.is-visible {
+  opacity: 0.85;
+  visibility: visible;
+  transform: translateY(0);
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    visibility 0s,
+    background-color var(--dur) var(--ease);
+}
+
+@media (hover: hover) {
+  .to-top.is-visible:hover {
+    opacity: 1;
+    background-color: var(--c-accent-hover);
+  }
+}
+
+.to-top:focus-visible {
+  outline: 2px solid var(--c-focus);
+  outline-offset: 2px;
+}
+
+.to-top:active {
+  background-color: var(--c-accent-hover);
+  transform: scale(0.95);
+}
+
+.to-top svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@media (min-width: 48em) {
+  .to-top {
+    right: var(--sp-lg);
+    bottom: var(--sp-lg);
+    width: 3rem;
+    height: 3rem;
   }
 }
