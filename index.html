@@ -71,17 +71,17 @@
       </div>
     </div>
   </header>
-    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
-      <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
-        <ul class="mobile-menu__list">
-          <li><a class="mobile-menu__link" href="index.html#works">Работы</a></li>
-          <li><a class="mobile-menu__link" href="index.html#about">О мастере</a></li>
-          <li><a class="mobile-menu__link" href="index.html#process">Как записаться</a></li>
-          <li><a class="mobile-menu__link" href="catalog.html">Каталог</a></li>
-          <li><a class="mobile-menu__link" href="index.html#contacts">Контакты</a></li>
-        </ul>
-      </nav>
-    </div>
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+      <ul class="mobile-menu__list">
+        <li><a class="mobile-menu__link" href="index.html#works">Работы</a></li>
+        <li><a class="mobile-menu__link" href="index.html#about">О мастере</a></li>
+        <li><a class="mobile-menu__link" href="index.html#process">Как записаться</a></li>
+        <li><a class="mobile-menu__link" href="catalog.html">Каталог</a></li>
+        <li><a class="mobile-menu__link" href="index.html#contacts">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
   <main id="main">
 
     <!-- Секция 1: HERO -->
@@ -546,14 +546,13 @@
                     <circle cx="12" cy="10" r="3" />
                   </svg>
                 </span>
-                 <span>
-        <a class="cta__contact-link"
-           href="https://yandex.by/maps/?text=Минск%20метро%20Восток"
-           target="_blank" rel="noopener noreferrer">
-            Минск, м. Восток
-        </a>
-        · выезд на дом
-    </span>
+                <span>
+                  <a class="cta__contact-link" href="https://yandex.by/maps/?text=Минск%20метро%20Восток"
+                    target="_blank" rel="noopener noreferrer">
+                    Минск, м. Восток
+                  </a>
+                  · выезд на дом
+                </span>
               </li>
 
               <li class="cta__contact">
@@ -662,10 +661,16 @@
       </div>
     </div>
   </footer>
-
+  <button class="to-top" type="button" data-to-top aria-label="Наверх">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
   <script type="module" src="scripts/theme.js"></script>
   <script type="module" src="scripts/burger.js"></script>
   <script type="module" src="scripts/slider.js"></script>
+  <script type="module" src="scripts/ui.js"></script>
 </body>
 
 </html>
