@@ -157,6 +157,11 @@
   background-color: var(--c-surface-2);
   color: var(--c-accent);
 }
+.icon-btn:active {
+  background-color: var(--c-surface-2);
+  color: var(--c-accent);
+  transform: scale(0.92);
+}
 
 .icon-btn svg {
   width: 1.25rem;
@@ -360,7 +365,10 @@ body.is-menu-open {
     border-color: var(--c-accent-hover);
   }
 }
-
+.btn--primary:active {
+  background-color: var(--c-accent-hover);
+  border-color: var(--c-accent-hover);
+}
 .btn--primary:focus-visible {
   background-color: var(--c-accent-hover);
   border-color: var(--c-accent-hover);
@@ -382,9 +390,13 @@ body.is-menu-open {
   border-color: var(--c-accent);
   color: var(--c-accent);
 }
-
+.btn--ghost:active {
+  border-color: var(--c-accent);
+  color: var(--c-accent);
+}
 .btn:active {
   transform: translateY(1px);
+  
 }
 
 /* --------------------------------------------------------------------------

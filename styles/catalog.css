@@ -59,6 +59,9 @@
 .catalog__category:focus-visible {
   color: var(--c-text);
 }
+.catalog__category:active {
+  color: var(--c-text);
+}
 .catalog__category.is-active {
   background-color: var(--c-surface);
   color: var(--c-text);
@@ -133,7 +136,10 @@
   border-color: var(--c-accent);
   box-shadow: var(--shadow-md);
 }
-
+.card > article:active {
+  transform: scale(0.98);
+  border-color: var(--c-accent);
+}
 .card__media {
   display: block;
   background-color: var(--c-surface-2);
@@ -292,7 +298,10 @@
   outline: 2px solid var(--c-focus);
   outline-offset: 2px;
 }
-
+.modal__close:active {
+  background-color: var(--c-accent);
+  color: var(--c-on-accent);
+}
 .modal__close svg {
   width: 1.25rem;
   height: 1.25rem;
@@ -400,6 +409,9 @@
 .option:hover {
   border-color: var(--c-accent);
 }
+}
+.option:active {
+  border-color: var(--c-accent);
 }
 .option input {
   position: absolute;
