@@ -212,9 +212,9 @@
   height: 2px;
   border-radius: 2px;
   background-color: currentColor;
-  transition: transform var(--dur-slow) var(--ease),
+  transition: transform var(--dur) var(--ease),
               opacity var(--dur-fast) var(--ease),
-              top var(--dur-slow) var(--ease);
+              top var(--dur) var(--ease);
 }
 
 .burger__line:nth-child(1) {
@@ -263,9 +263,9 @@
   visibility: hidden;
   transform: translateY(-0.5rem);
   transition:
-    opacity var(--dur-slow) var(--ease),        /* 400мс */
-    transform var(--dur-slow) var(--ease),
-    visibility 0s linear var(--dur-slow);
+    opacity var(--dur) var(--ease),        /* 400мс */
+    transform var(--dur) var(--ease),
+    visibility 0s linear var(--dur);
 }
 
 .mobile-menu.is-open {
@@ -273,8 +273,8 @@
   visibility: visible;
   transform: translateY(0);
    transition:
-    opacity var(--dur-slow) var(--ease),
-    transform var(--dur-slow) var(--ease),
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
     visibility 0s;
 }
 
