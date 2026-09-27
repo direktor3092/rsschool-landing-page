@@ -50,11 +50,18 @@
     border-radius: var(--radius-sm);
   }
 }
-.catalog__category:hover,
+@media (hover: hover) {
+  .catalog__category:hover {
+    color: var(--c-text);
+  }
+}
+
 .catalog__category:focus-visible {
   color: var(--c-text);
 }
-
+.catalog__category:active {
+  color: var(--c-text);
+}
 .catalog__category.is-active {
   background-color: var(--c-surface);
   color: var(--c-text);
@@ -116,14 +123,23 @@
     transform var(--dur) var(--ease),
     box-shadow var(--dur) var(--ease);
 }
+@media (hover: hover) {
+  .card > article:hover {
+    transform: translateY(-4px);
+    border-color: var(--c-accent);
+    box-shadow: var(--shadow-md);
+  }
+}
 
-.card>article:hover,
-.card>article:focus-visible {
+.card > article:focus-visible {
   transform: translateY(-4px);
   border-color: var(--c-accent);
   box-shadow: var(--shadow-md);
 }
-
+.card > article:active {
+  transform: scale(0.98);
+  border-color: var(--c-accent);
+}
 .card__media {
   display: block;
   background-color: var(--c-surface-2);
@@ -137,11 +153,11 @@
   display: block;
   transition: transform var(--dur-slow) var(--ease);
 }
-
+@media (hover: hover) {
 .card>article:hover .card__image {
   transform: scale(1.03);
 }
-
+}
 .card__body {
   display: grid;
   gap: var(--sp-xs);
@@ -271,17 +287,21 @@
   transition: background-color var(--dur) var(--ease),
               color var(--dur) var(--ease);
 }
-
+@media (hover: hover) {
 .modal__close:hover {
   background-color: var(--c-accent);
   color: var(--c-on-accent);
+}
 }
 
 .modal__close:focus-visible {
   outline: 2px solid var(--c-focus);
   outline-offset: 2px;
 }
-
+.modal__close:active {
+  background-color: var(--c-accent);
+  color: var(--c-on-accent);
+}
 .modal__close svg {
   width: 1.25rem;
   height: 1.25rem;
@@ -385,11 +405,14 @@
     background-color var(--dur) var(--ease),
     color var(--dur) var(--ease);
 }
-
+@media (hover: hover) {
 .option:hover {
   border-color: var(--c-accent);
 }
-
+}
+.option:active {
+  border-color: var(--c-accent);
+}
 .option input {
   position: absolute;
   opacity: 0;

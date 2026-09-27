@@ -91,6 +91,11 @@ const initSlider = () => {
   nextBtn.addEventListener('click', next);
   prevBtn.addEventListener('click', prev);
 
+  slider.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+  });
+
   dots.forEach((dot) => {
     dot.addEventListener('click', () => {
       const index = Number(dot.dataset.sliderDot);
@@ -99,7 +104,70 @@ const initSlider = () => {
       }
     });
   });
+  // ---------- Свайп ----------
 
+  const SWIPE_THRESHOLD = 50;   // минимум px для срабатывания
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchCurrentX = 0;
+  let isSwiping = false;
+
+  const viewport = slider.querySelector('.slider__viewport');
+
+  const onTouchStart = (e) => {
+    if (e.touches.length !== 1) return;
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+    touchCurrentX = touchStartX;
+    isSwiping = false;
+  };
+
+  const onTouchMove = (e) => {
+    if (e.touches.length !== 1) return;
+
+    touchCurrentX = e.touches[0].clientX;
+    const deltaX = touchCurrentX - touchStartX;
+    const deltaY = e.touches[0].clientY - touchStartY;
+
+    // Если движение больше вертикальное — это скролл страницы, не мешаем
+    if (!isSwiping && Math.abs(deltaY) > Math.abs(deltaX)) return;
+
+    isSwiping = true;
+
+    // Визуально тянем трек за пальцем (немного «резиново»)
+    const trackStyle = getComputedStyle(track);
+    const gap = parseFloat(trackStyle.columnGap || trackStyle.gap) || 0;
+    const slideWidth = slides[0].getBoundingClientRect().width + gap;
+    const baseOffset = -slideWidth * currentIndex;
+    const rubber = deltaX * 0.6;   // 0.6 — коэффициент «сопротивления»
+
+    track.style.transition = 'none';
+    track.style.transform = `translate3d(${baseOffset + rubber}px, 0, 0)`;
+  };
+
+  const onTouchEnd = () => {
+    if (!isSwiping) return;
+
+    const delta = touchCurrentX - touchStartX;
+    track.style.transition = '';
+
+    if (delta > SWIPE_THRESHOLD) {
+      prev();
+    } else if (delta < -SWIPE_THRESHOLD) {
+      next();
+    } else {
+      // Не дотянули — возвращаемся на место
+      moveTo(currentIndex);
+    }
+
+    isSwiping = false;
+  };
+
+  viewport.addEventListener('touchstart', onTouchStart, { passive: true });
+  viewport.addEventListener('touchmove', onTouchMove, { passive: true });
+  viewport.addEventListener('touchend', onTouchEnd);
+  viewport.addEventListener('touchcancel', onTouchEnd);
   // --- Инициализация и адаптация ---
 
   updateMetrics();
