@@ -494,11 +494,17 @@
         gap: var(--sp-md);
     }
 }
+@media (min-width: 40em) and (max-width: 63.99em) {
+  .process {
+    grid-auto-rows: 1fr;
+  }
+}
 
 .process__step {
     position: relative;
     display: grid;
     gap: var(--sp-xs);
+    align-content: space-between;
     padding: var(--sp-lg);
     background-color: var(--c-surface);
     border: 1px solid var(--c-border);
@@ -565,19 +571,24 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+@media (min-width: 48em) and (max-width: 63.99em) {
+  .reviews {
+    grid-auto-rows: 1fr;
+  }
+}
 
 .review {
-    display: grid;
-    gap: var(--sp-md);
-    align-content: start;
-    padding: var(--sp-lg);
-    background-color: var(--c-surface);
-    border: 1px solid var(--c-border);
-    border-radius: var(--radius-md);
-    transition: background-color var(--dur) var(--ease),
-        border-color var(--dur) var(--ease),
-        transform var(--dur) var(--ease),
-        box-shadow var(--dur) var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-md);
+  padding: var(--sp-lg);
+  background-color: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  transition: background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
 }
 @media (hover: hover) {
 .review:hover {
@@ -616,6 +627,7 @@
     gap: var(--sp-sm);
     padding-top: var(--sp-md);
     border-top: 1px solid var(--c-border);
+    margin-top: auto; 
     transition: border-color var(--dur) var(--ease);
 }
 
