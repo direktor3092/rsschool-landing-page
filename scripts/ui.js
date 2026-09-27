@@ -113,7 +113,7 @@ const initToTop = () => {
   const btn = document.querySelector('[data-to-top]');
   if (!btn) return;
 
-  const SHOW_AFTER = window.innerHeight * 1.5;
+  const SHOW_AFTER = window.innerHeight * 3;
 
   const update = () => {
     btn.classList.toggle('is-visible', window.scrollY > SHOW_AFTER);
